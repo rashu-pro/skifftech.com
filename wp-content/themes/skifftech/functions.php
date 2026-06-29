@@ -194,13 +194,20 @@ function skifftech_scripts() {
 		true
 	);
 
-	// V6 home page styles (only on Home V6 template)
+	// V6 home page styles + scripts (only on Home V6 template)
 	if ( is_page_template( 'template-pages/home-v6.php' ) ) {
 		wp_enqueue_style(
 			'skifftech-home',
 			get_template_directory_uri() . '/css/home.css',
 			array( 'skifftech-header-skiff' ),
 			_S_VERSION
+		);
+		wp_enqueue_script(
+			'skifftech-home',
+			get_template_directory_uri() . '/js/home.js',
+			array(),
+			_S_VERSION,
+			true
 		);
 	}
 
