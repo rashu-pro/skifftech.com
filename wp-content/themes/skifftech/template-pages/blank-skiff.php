@@ -25,4 +25,4 @@ get_header( 'skiff' );
   ?>
 </main>
 
-<?php get_footer(); ?>
+<?php get_footer( 'skiff' ); ?>
