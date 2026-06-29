@@ -3,15 +3,8 @@
 
     <div class="rev-head reveal">
       <div class="sec-head" style="margin:0">
-        <span class="eyebrow">Genuine reviews</span>
+        <span class="eyebrow">Reviews</span>
         <h2>Don&rsquo;t take our word for it.</h2>
-      </div>
-      <div class="rating-badge">
-        <div class="big">4.9</div>
-        <div>
-          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <div class="src">Verified &middot; Clutch &amp; Google</div>
-        </div>
       </div>
     </div><!-- .rev-head -->
 

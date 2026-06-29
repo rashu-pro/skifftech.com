@@ -305,7 +305,6 @@
   width: 100%;
   max-width: 520px;
   margin-left: auto;
-  aspect-ratio: 4 / 5;
   border-radius: 20px;
   background:
     radial-gradient(
@@ -416,7 +415,6 @@
   #pg-home .hero-imgph {
     max-width: 480px;
     margin: 10px auto 0;
-    aspect-ratio: 16 / 11;
   }
 }
 
@@ -557,9 +555,9 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 12px 22px;
+  padding: 10px;
   border: 1px solid var(--line-d);
-  border-radius: 999px;
+  border-radius: 12px;
   color: var(--tl-mut);
   white-space: nowrap;
   font-size: 14px;
@@ -577,8 +575,14 @@
   flex: none;
   opacity: 0.6;
 }
+#pg-home .client-logo img {
+  border-radius: 12px;
+  max-height: 50px;
+  opacity: 0.6;
+}
 
-#pg-home .client-logo:hover {
+#pg-home .client-logo:hover,
+#pg-home .client-logo img:hover {
   color: var(--tl);
   border-color: var(--gold);
 }

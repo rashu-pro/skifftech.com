@@ -53,11 +53,9 @@
         <span class="hc bl"></span>
         <span class="hc br"></span>
         <div class="hero-imgph-inner">
-          <div class="hp-ic">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2.5"/><circle cx="8.5" cy="9.5" r="1.8"/><path d="M4 18l5-5 3 3 4-4 4 4"/></svg>
+          <div class="hp-lbl">
+            <img src="<?php echo get_template_directory_uri(); ?>/images/image-hero.min.jpg" alt="skiff technologies">
           </div>
-          <div class="hp-lbl">YOUR IMAGE HERE</div>
-          <div class="hp-sub">Add a product, team, or brand visual<br>Recommended ~1200 &times; 1500px</div>
         </div>
       </div>
     </div><!-- .hero-media -->
