@@ -1,0 +1,14 @@
+@media (min-width:1600px){
+  #primary-menu .menu-item a{
+    font-size:15px;
+  }
+}
+
+@include media("screen","<bp1Width"){
+  p{
+    margin-bottom:15px;
+  }
+  .elementor-8 .elementor-element.elementor-element-4709db20 {
+    padding: 103px 20px 235px 20px;
+  }
+}

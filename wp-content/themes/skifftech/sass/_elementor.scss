@@ -1,0 +1,85 @@
+.banner-page{
+  &.elementor{
+    &-section{
+      padding:0!important;
+    }
+  }
+  @include media("screen","<bp1Width"){
+    .elementor{
+
+      &-column{
+        padding:115px 15px 40px!important;
+      }
+
+      &-heading-title{
+        font-size:40px!important;
+        line-height: 1!important;
+        //padding-top:80px!important;
+      }
+      &-divider{
+        padding-top:8px!important;
+        padding-bottom:8px!important;
+        &-separator{
+          width:32%!important;
+        }
+      }
+
+      &-widget-text-editor{
+        .elementor-widget-container{
+          padding:0!important;
+        }
+      }
+    }
+  }
+}
+
+.section{
+  @include media("screen","<bp1Width"){
+    &-service{
+      padding:60px 15px!important;
+    }
+  }
+
+  @include media("screen","<min1Width"){
+    .elementor{
+      &-widget{
+        text-align:left!important;
+        &-image{
+        text-align: center;
+          .elementor-widget-container{
+            padding:0 0 25px!important;
+          }
+        }
+
+        &-divider{
+          margin-bottom:10px!important;
+        }
+      }
+
+      &-heading-title{
+        text-align: left!important;
+        font-size:24px!important;
+        letter-spacing: 0.05rem!important;
+      }
+
+      &-divider{
+        &-separator{
+          margin:0!important;
+        }
+      }
+    }
+  }
+}
+
+.contact-icon-row{
+  @include media("screen","<bp1Width"){
+    &-column{
+      padding-bottom:30px;
+      &.middle{
+        .elementor-widget-wrap{
+          padding:30px 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,126 @@
+.btn{
+  text-transform: uppercase;
+  font-size:14px;
+  letter-spacing: 1px;
+  &-outline{
+    border:2px solid $color_primary;
+    color:$color_primary;
+    &:focus,&:visited{
+      color:$color_primary;
+    }
+    &:hover{
+      background-color: $color_primary;
+      color:#202020;
+    }
+  }
+}
+.btn-quote{
+  //background-color: $color_primary;
+  //color:#202020;
+  /*font-family: 'Poppins', sans-serif;*/
+  /*font-weight: 600;*/
+  padding:10px 20px;
+  font-size:12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing:1px;
+  margin-right:20px;
+  @include media("screen",">minWidth"){
+    padding:12px 30px;
+    font-size:14px;
+  }
+  @include media("screen",">bp1Width"){
+    margin-right:0;
+  }
+}
+.btn-quote i{
+  padding-right:8px;
+}
+.btn-primary{
+  background-color: $color_primary;
+  color:#202020;
+  padding:12px 20px;
+  border-color:$color_primary;
+}
+.btn i{
+  padding-right:8px;
+}
+.banner-content .btn-primary{
+  padding:20px 40px;
+  font-size:16px;
+  font-weight: 500;
+  color:#fff;
+}
+.btn-primary:hover{
+  background-color:#202020;
+  color:#fff;
+  border-color:#202020;
+  box-shadow:0 0 3px rgba(0, 0, 0, 0.4);
+}
+.btn-big{
+  min-width:250px;
+  padding:20px 30px;
+  font-size:18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.btn:focus,
+.btn:hover,
+.btn:visited{
+  //color:#fff;
+}
+button{
+  cursor:pointer;
+}
+
+.hover-sweep-top{
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  //padding: 14px;
+  border: 2px solid $color_primary;
+  color:$color_primary;
+  //color: #2f2f2f;
+  //font-size: 0.9rem;
+  //font-family: "Montserrat",sans-serif;
+  //margin-bottom: 50px;
+  &:focus,&:visited{
+    color:$color_primary;
+  }
+  &:before{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: $color_primary;
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.8s;
+    transition-duration: 0.8s;
+    -webkit-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+    transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  &:hover{
+    color:#202020;
+    //border-color:#202123;
+    &:before{
+      -webkit-transform: scaleY(1);
+      transform: scaleY(1);
+    }
+  }
+}
