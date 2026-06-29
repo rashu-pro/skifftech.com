@@ -179,6 +179,21 @@ function skifftech_scripts() {
     wp_register_script('scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0',true); // plugins
     wp_enqueue_script('scripts'); // Enqueue it!
 
+	// V6 header styles and behaviour (used by header-skiff.php)
+	wp_enqueue_style(
+		'skifftech-header-skiff',
+		get_template_directory_uri() . '/css/header-skiff.css',
+		array(),
+		_S_VERSION
+	);
+	wp_enqueue_script(
+		'skifftech-header-skiff',
+		get_template_directory_uri() . '/js/header-skiff.js',
+		array(),
+		_S_VERSION,
+		true
+	);
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
