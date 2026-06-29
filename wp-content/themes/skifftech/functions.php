@@ -179,7 +179,7 @@ function skifftech_scripts() {
     wp_register_script('scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0',true); // plugins
     wp_enqueue_script('scripts'); // Enqueue it!
 
-	// V6 header styles and behaviour (used by header-skiff.php)
+	// V6 header + footer styles and behaviour
 	wp_enqueue_style(
 		'skifftech-header-skiff',
 		get_template_directory_uri() . '/css/header-skiff.css',
@@ -193,6 +193,16 @@ function skifftech_scripts() {
 		_S_VERSION,
 		true
 	);
+
+	// V6 home page styles (only on Home V6 template)
+	if ( is_page_template( 'template-pages/home-v6.php' ) ) {
+		wp_enqueue_style(
+			'skifftech-home',
+			get_template_directory_uri() . '/css/home.css',
+			array( 'skifftech-header-skiff' ),
+			_S_VERSION
+		);
+	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
