@@ -8,7 +8,7 @@
  * @package skifftech
  */
 
-get_header( 'skiff' );
+get_header();
 ?>
 
 <main id="pg-home">
@@ -28,4 +28,4 @@ get_header( 'skiff' );
   <?php get_template_part( 'template-parts/home/cta' ); ?>
 </main><!-- #pg-home -->
 
-<?php get_footer( 'skiff' ); ?>
+<?php get_footer(); ?>

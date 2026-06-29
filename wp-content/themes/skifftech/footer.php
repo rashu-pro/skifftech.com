@@ -1,83 +1,70 @@
 <?php
 /**
- * The template for displaying the footer
- *
- * Contains the closing of the #content div and all content after.
+ * The template for displaying the footer — V6 dark gold design.
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package skifftech
  */
-
 ?>
 
-	<footer id="colophon" class="site-footer style-new">
+<footer id="ftr">
+  <div class="wrap">
 
-        <div class="footer-main">
-            <div class="footer-content">
-                <div class="container">
-                    <div class="row align-items-end">
-                        <div class="col-md-7">
-                            <div class="footer-logo">
-								<a href="https://skifftech.com"><img src="https://skifftech.com/wp-content/uploads/2022/05/skiff-logo-new-version-white.png" class="img-fluid"></a>
-                            </div>
+    <div class="foot-top">
 
-                            <div class="footer-menu-wrapper">
-                                <ul class="nav justify-content-start mt-4">
-<!--                                     <li><a href="https://skifftech.com/">Home</a> </li> -->
-                                    <li><a href="https://skifftech.com/about-us/">About Us</a> </li>
-                                    <li><a href="https://skifftech.com/contact-us/">Contact Us</a> </li>
-                                    <li><a href="https://skifftech.com/services/">Our Services</a> </li>
-									<li><a href="https://skifftech.com/blogs/">Blogs</a> </li>
-                                </ul>
-                            </div>
-                        </div>
+      <div class="foot-brand">
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+          <img src="https://skifftech.com/wp-content/uploads/2022/05/skiff-logo-new-version-white.png"
+               alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
+        </a>
+        <p>Your end-to-end product engineering partner &mdash; software that scales with your business.</p>
+      </div>
 
-                        <div class="col-md-5">
-                            <div>
-                            <h4>ADDRESS</h4>
-                            <p class="address-text">
-                            <span><i class="fa fa-map-marker"></i></span> <span class="pl-2">1103, CDA Avenue, East Nasirabad,<br> Panchlaish, Chittagong</span>
-                            </p>
-                            </div>
+      <div class="foot-col">
+        <h5>Services</h5>
+        <a href="<?php echo esc_url( home_url( '/services/' ) ); ?>">Custom Software</a>
+        <a href="<?php echo esc_url( home_url( '/services/' ) ); ?>">Consultency</a>
+        <a href="<?php echo esc_url( home_url( '/services/' ) ); ?>">Data Analysis</a>
+        <a href="<?php echo esc_url( home_url( '/products/' ) ); ?>">Digital Marketing</a>
+      </div>
 
-                            <div class="footer-widgets">
-<!--                                 <h3 class="footer-widgets-title mb-4 text-white">Contact Us</h3> -->
-                                <div class="footer-widgets-content">
-                                    <p class="nav justify-content-start-2 mt-4">
-                                        <a href="tel:+8801767839243"><i class="fa fa-phone"></i> <span class="pl-2">+8801767839243</span> </a>
-                                        <a href="mailto:info@skifftech.com" class="d-block d-sm-block d-md-inline-block ml-0 ml-md-2"><i class="fa fa-envelope"></i> <span class="pl-2">info@skifftech.com</span> </a>
-                                    </p>
-<!--                                     <p class="mb-0"><i class="fa fa-map-marker"></i> <span class="pl-2">1103 CDA Avenue, Chittagong, Bangladesh</span></p> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="foot-col">
+        <h5>Company</h5>
+        <a href="<?php echo esc_url( home_url( '/about-us/' ) ); ?>">About Us</a>
+        <a href="<?php echo esc_url( home_url( '/team/' ) ); ?>">Team</a>
+        <a href="<?php echo esc_url( home_url( '/blogs/' ) ); ?>">Blog</a>
+        <a href="<?php echo esc_url( home_url( '/contact-us/' ) ); ?>">Contact Us</a>
+      </div>
 
-        </div>
+      <div class="foot-col">
+        <h5>Contact</h5>
+        <a href="https://maps.google.com/?q=1103+CDA+Avenue+East+Nasirabad+Chittagong" target="_blank" rel="noopener">
+          1103, CDA Avenue,<br>East Nasirabad, Panchlaish, Chittagong
+        </a>
+        <a href="mailto:info@skifftech.com">info@skifftech.com</a>
+        <a href="tel:+8801767839243">+880 1767 839243</a>
+      </div>
 
-        <div class="site-info">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-md-6">
-                        <p class="m-0 text-center text-md-left">Copyright © <?php echo date('Y') ?> Skiff Technologies, All Rights Reserved.</p>
-                    </div>
-                    <div class="col-md-6 text-center text-md-right">
-                        <ul class="nav social-nav pt-3 pt-md-0">
-                            <li><a class="fb" href="https://www.facebook.com/skiff.technologies" target="_blank"><i class="fa fa-facebook"></i> </a> </li>
-                            <li><a class="twt" href="javascript:void(0)"><i class="fa fa-twitter"></i> </a> </li>
-<!--                             <li><a class="yt" href="javascript:void(0)"><i class="fa fa-youtube"></i> </a> </li> -->
-                            <li><a class="ln" href="javascript:void(0)"><i class="fa fa-linkedin"></i> </a> </li>
-                        </ul>
-                    </div>
-                </div>
+    </div><!-- .foot-top -->
 
-            </div>
+    <div class="foot-bot">
+      <span>&copy; <?php echo esc_html( date( 'Y' ) ); ?> Skiff Technologies. All rights reserved.</span>
+      <div class="socials">
+        <a href="https://www.facebook.com/skiff.technologies" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 9h3V6h-3c-2 0-3 1-3 3v2H8v3h3v6h3v-6h3l1-3h-4V9z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/skifftech" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h4v16H4zM6 2a2 2 0 110 4 2 2 0 010-4zM10 9h4v2a4 4 0 014-2c3 0 4 2 4 5v6h-4v-5c0-1-1-2-2-2s-2 1-2 2v5h-4z"/></svg>
+        </a>
+        <a href="https://twitter.com/skifftech" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h4l4 6 4-6h4l-6 8 6 8h-4l-4-6-4 6H4l6-8z"/></svg>
+        </a>
+      </div>
+    </div><!-- .foot-bot -->
 
-        </div><!-- .site-info -->
-	</footer>
+  </div><!-- .wrap -->
+</footer><!-- #ftr -->
 
 </div><!-- #page -->
 

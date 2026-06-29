@@ -8,7 +8,7 @@
  * @package skifftech
  */
 
-get_header( 'skiff' );
+get_header();
 ?>
 
 <style>
@@ -25,4 +25,4 @@ get_header( 'skiff' );
   ?>
 </main>
 
-<?php get_footer( 'skiff' ); ?>
+<?php get_footer(); ?>

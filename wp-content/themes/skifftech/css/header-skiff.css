@@ -54,7 +54,7 @@
 
 /* ----- Logo ----- */
 #hdr .brand-logo {
-  height: 36px;
+  height: 65px;
   width: auto;
   display: block;
 }
@@ -480,7 +480,7 @@
 }
 
 #ftr .foot-brand img {
-  height: 34px;
+  height: 65px;
   width: auto;
   margin-bottom: 16px;
   display: block;
