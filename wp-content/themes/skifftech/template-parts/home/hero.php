@@ -36,7 +36,7 @@
 
       <div class="hero-cta">
         <a href="/contact/" class="btn btn-primary">Schedule a Meeting <span class="arrow">&#8594;</span></a>
-        <a href="/work/" class="btn btn-ghost">See Our Work</a>
+        <a href="/services/" class="btn btn-ghost">Our Services</a>
       </div>
 
       <div class="hero-cred">

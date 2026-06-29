@@ -32,7 +32,6 @@
           <div class="k">Less manual work</div>
         </div>
       </div>
-      <span class="more">Read the full story <span class="arrow">&#8594;</span></span>
     </div>
 
   </div>
