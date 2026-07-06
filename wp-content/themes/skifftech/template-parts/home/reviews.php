@@ -1,54 +1,90 @@
 <section class="pad on-light">
   <div class="wrap">
 
-    <div class="rev-head reveal">
-      <div class="sec-head" style="margin:0">
-        <span class="eyebrow">Reviews</span>
-        <h2>Don&rsquo;t take our word for it.</h2>
-      </div>
-    </div><!-- .rev-head -->
+    <div class="sec-head reveal">
+      <span class="eyebrow">Reviews</span>
+      <h2>Don&rsquo;t take our word for it.</h2>
+    </div>
 
-    <div class="quotes">
+    <div class="reveal" data-carousel>
+      <div class="c-track">
 
-      <div class="quote reveal">
-        <div class="qstars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p>Skiff felt like part of our team from week one. They scoped tightly, shipped on schedule, and the platform has handled every growth spike since.</p>
-        <div class="who">
-          <span class="avatar">A</span>
-          <div>
-            <div class="nm">Aisha Rahman</div>
-            <div class="rl">COO, Cargologic</div>
+        <div class="c-slide">
+          <div class="rev-card">
+            <div class="rev-main">
+              <div class="rev-top">
+                <span class="rev-verified">&#10003; Phone Verified</span>
+                <span class="stars" style="font-size:14px">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+              </div>
+              <!-- <div class="rev-plat"><span class="pl">Clutch</span><span class="sc">4.9 / 5</span></div> -->
+              <p class="rev-quote">&ldquo;Skiff felt like part of our team from week one.&rdquo;</p>
+              <div class="rev-div"></div>
+              <p class="rev-body">They scoped tightly, shipped on schedule, and the platform has handled every growth spike since. A true extension of our team.</p>
+              <div class="who">
+                <span class="avatar">A</span>
+                <div>
+                  <div class="nm">Aisha Rahman</div>
+                  <div class="rl">COO, Cargologic</div>
+                </div>
+              </div>
+            </div>
+            <div class="rev-side">
+              <!-- <div class="rev-logo-box">CLIENT LOGO</div> -->
+              <div>
+                <div class="rev-side-lbl">Project</div>
+                <div class="rev-side-val">A logistics operations platform built and supported end to end.</div>
+              </div>
+              <div>
+                <div class="rev-side-lbl">Country</div>
+                <div class="rev-country"><span class="flag">&#127482;&#127480;</span> United States</div>
+              </div>
+              <a href="#work" class="rev-more">Read more <span class="arrow">&rarr;</span></a>
+            </div>
           </div>
-          <span class="verified">&#10003; Verified</span>
         </div>
-      </div>
 
-      <div class="quote reveal" style="transition-delay:.07s">
-        <div class="qstars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p>We came in with a rough idea and left with a production SaaS. Weekly demos meant no surprises, and they still support it today.</p>
-        <div class="who">
-          <span class="avatar">M</span>
-          <div>
-            <div class="nm">Marcus Lee</div>
-            <div class="rl">Founder, Pallet OS</div>
+        <div class="c-slide">
+          <div class="rev-card">
+            <div class="rev-main">
+              <div class="rev-top">
+                <span class="rev-verified">&#10003; Phone Verified</span>
+                <span class="stars" style="font-size:14px">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+              </div>
+              <!-- <div class="rev-plat"><span class="pl">Google</span><span class="sc">5.0 / 5</span></div> -->
+              <p class="rev-quote">&ldquo;We came in with a rough idea and left with a production SaaS.&rdquo;</p>
+              <div class="rev-div"></div>
+              <p class="rev-body">Weekly demos meant no surprises, and they still support the product today. The engagement felt effortless from start to launch.</p>
+              <div class="who">
+                <span class="avatar">M</span>
+                <div>
+                  <div class="nm">Marcus Lee</div>
+                  <div class="rl">Founder, Pallet OS</div>
+                </div>
+              </div>
+            </div>
+            <div class="rev-side">
+              <!-- <div class="rev-logo-box">CLIENT LOGO</div> -->
+              <div>
+                <div class="rev-side-lbl">Project</div>
+                <div class="rev-side-val">A scalable SaaS product delivered from MVP to launch.</div>
+              </div>
+              <div>
+                <div class="rev-side-lbl">Country</div>
+                <div class="rev-country"><span class="flag">&#127468;&#127463;</span> United Kingdom</div>
+              </div>
+              <a href="#work" class="rev-more">Read more <span class="arrow">&rarr;</span></a>
+            </div>
           </div>
-          <span class="verified">&#10003; Verified</span>
         </div>
-      </div>
 
-      <div class="quote reveal" style="transition-delay:.14s">
-        <div class="qstars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p>The most transparent dev partner we&rsquo;ve used. Clear estimates, clean code, and a team that genuinely cared about the outcome.</p>
-        <div class="who">
-          <span class="avatar">S</span>
-          <div>
-            <div class="nm">Sara Okafor</div>
-            <div class="rl">Product Lead, Mediq</div>
-          </div>
-          <span class="verified">&#10003; Verified</span>
-        </div>
-      </div>
+      </div><!-- .c-track -->
 
-    </div><!-- .quotes -->
+      <div class="c-controls">
+        <button class="cnav-btn" data-dir="-1" aria-label="Previous review">&lsaquo;</button>
+        <div class="cdots"></div>
+        <button class="cnav-btn" data-dir="1" aria-label="Next review">&rsaquo;</button>
+      </div>
+    </div><!-- [data-carousel] -->
+
   </div>
 </section>

@@ -11,15 +11,19 @@
   var burger = document.getElementById('burger');
   var mnav   = document.getElementById('mnav');
   if (burger && mnav) {
-    burger.addEventListener('click', function () {
-      var open = mnav.classList.toggle('open');
+    var setMenu = function (open) {
+      mnav.classList.toggle('open', open);
       burger.setAttribute('aria-expanded', String(open));
+      // Lock background scroll while the full-page drawer is open
+      document.body.style.overflow = open ? 'hidden' : '';
+    };
+    burger.addEventListener('click', function () {
+      setMenu(!mnav.classList.contains('open'));
     });
     // Close mobile menu when any link inside it is clicked
     mnav.querySelectorAll('a').forEach(function (a) {
       a.addEventListener('click', function () {
-        mnav.classList.remove('open');
-        burger.setAttribute('aria-expanded', 'false');
+        setMenu(false);
       });
     });
   }

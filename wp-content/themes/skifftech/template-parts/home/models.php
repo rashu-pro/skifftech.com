@@ -4,7 +4,6 @@
     <div class="sec-head reveal">
       <span class="eyebrow">Ways to work with us</span>
       <h2>Engagement models that fit your stage.</h2>
-      <p>Flexible ways to build with Skiff &mdash; choose how much you want to manage.</p>
     </div>
 
     <div class="models">

@@ -57,14 +57,15 @@ $tpl = get_template_directory_uri();
 
   </div><!-- .hdr-row -->
 
-  <!-- Mobile navigation panel -->
-  <?php wp_nav_menu( array(
-      'theme_location' => 'menu-1',
-      'container'      => 'div',
-      'container_id'   => 'mnav',
-      'container_class'=> '',
-      'menu_id'        => 'mnav-menu',
-      'menu_class'     => 'mnav-list',
-  ) ); ?>
+  <!-- Mobile navigation panel (full-page drawer) -->
+  <div id="mnav">
+    <?php wp_nav_menu( array(
+        'theme_location' => 'menu-1',
+        'container'      => false,
+        'menu_id'        => 'mnav-menu',
+        'menu_class'     => 'mnav-list',
+    ) ); ?>
+    <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn-skiff mnav-cta">Schedule a Meeting</a>
+  </div>
 
 </header><!-- #hdr -->

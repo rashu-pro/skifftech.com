@@ -179,18 +179,22 @@ function skifftech_scripts() {
     wp_register_script('scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0',true); // plugins
     wp_enqueue_script('scripts'); // Enqueue it!
 
-	// V6 header + footer styles and behaviour
+	// V6 header + footer styles and behaviour.
+	// Version by filemtime so browsers always fetch the latest after edits.
+	$theme_dir = get_template_directory();
+	$theme_uri = get_template_directory_uri();
+
 	wp_enqueue_style(
 		'skifftech-header-skiff',
-		get_template_directory_uri() . '/css/header-skiff.css',
+		$theme_uri . '/css/header-skiff.css',
 		array(),
-		_S_VERSION
+		filemtime( $theme_dir . '/css/header-skiff.css' )
 	);
 	wp_enqueue_script(
 		'skifftech-header-skiff',
-		get_template_directory_uri() . '/js/header-skiff.js',
+		$theme_uri . '/js/header-skiff.js',
 		array(),
-		_S_VERSION,
+		filemtime( $theme_dir . '/js/header-skiff.js' ),
 		true
 	);
 
@@ -198,15 +202,15 @@ function skifftech_scripts() {
 	if ( is_page_template( 'template-pages/home-v6.php' ) ) {
 		wp_enqueue_style(
 			'skifftech-home',
-			get_template_directory_uri() . '/css/home.css',
+			$theme_uri . '/css/home.css',
 			array( 'skifftech-header-skiff' ),
-			_S_VERSION
+			filemtime( $theme_dir . '/css/home.css' )
 		);
 		wp_enqueue_script(
 			'skifftech-home',
-			get_template_directory_uri() . '/js/home.js',
+			$theme_uri . '/js/home.js',
 			array(),
-			_S_VERSION,
+			filemtime( $theme_dir . '/js/home.js' ),
 			true
 		);
 	}

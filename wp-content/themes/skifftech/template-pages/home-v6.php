@@ -15,11 +15,15 @@ get_header();
   <?php get_template_part( 'template-parts/home/hero' ); ?>
   <?php get_template_part( 'template-parts/home/clients' ); ?>
   <?php get_template_part( 'template-parts/home/reviews' ); ?>
-  <?php get_template_part( 'template-parts/home/services' ); ?>
-  <?php get_template_part( 'template-parts/home/products' ); ?>
   <?php get_template_part( 'template-parts/home/models' ); ?>
+  <?php get_template_part( 'template-parts/home/services' ); ?>
+  <?php 
+  //get_template_part( 'template-parts/home/products' );
+   ?>
   <?php get_template_part( 'template-parts/home/case-study' ); ?>
-  <?php get_template_part( 'template-parts/home/industries' ); ?>
+  <?php 
+  //get_template_part( 'template-parts/home/industries' ); 
+  ?>
   <?php get_template_part( 'template-parts/home/why' ); ?>
   <?php get_template_part( 'template-parts/home/process' ); ?>
   <?php get_template_part( 'template-parts/home/tech-stack' ); ?>

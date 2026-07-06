@@ -40,8 +40,8 @@
       </div>
 
       <div class="hero-cred">
-        <b>120+</b> projects delivered &nbsp;&middot;&nbsp;
-        <b>35+</b> engineers &nbsp;&middot;&nbsp;
+        <b>70+</b> projects delivered &nbsp;&middot;&nbsp;
+        <b>25+</b> engineers &nbsp;&middot;&nbsp;
         end-to-end delivery
       </div>
     </div><!-- .reveal -->

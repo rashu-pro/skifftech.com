@@ -44,6 +44,60 @@
   }
 
   /* ----------------------------------------------------------
+     Reviews carousel — snap track, prev/next + dots
+  ---------------------------------------------------------- */
+  document.querySelectorAll('#pg-home [data-carousel]').forEach(function (root) {
+    var track = root.querySelector('.c-track');
+    var dotsWrap = root.querySelector('.cdots');
+    if (!track || !dotsWrap) return;
+
+    var slides = [].slice.call(track.querySelectorAll('.c-slide'));
+    if (!slides.length) return;
+
+    var idx = 0;
+    var dots = slides.map(function (_, i) {
+      var d = document.createElement('button');
+      d.className = 'cdot';
+      d.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+      d.addEventListener('click', function () { go(i); });
+      dotsWrap.appendChild(d);
+      return d;
+    });
+
+    function setIdx(i) {
+      idx = Math.max(0, Math.min(slides.length - 1, i));
+      dots.forEach(function (d, j) { d.classList.toggle('active', j === idx); });
+    }
+    function go(i) {
+      setIdx(i);
+      track.scrollTo({ left: slides[idx].offsetLeft - track.offsetLeft, behavior: 'smooth' });
+    }
+
+    root.querySelectorAll('[data-dir]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        go(idx + parseInt(b.dataset.dir, 10));
+      });
+    });
+
+    var t;
+    track.addEventListener('scroll', function () {
+      clearTimeout(t);
+      t = setTimeout(function () {
+        var c = track.scrollLeft + track.clientWidth / 2;
+        var best = 0, bd = Infinity;
+        slides.forEach(function (s, j) {
+          var sc = (s.offsetLeft - track.offsetLeft) + s.clientWidth / 2;
+          var dd = Math.abs(sc - c);
+          if (dd < bd) { bd = dd; best = j; }
+        });
+        setIdx(best);
+      }, 90);
+    });
+
+    setIdx(0);
+  });
+
+  /* ----------------------------------------------------------
      FAQ accordion
   ---------------------------------------------------------- */
   var qaItems = document.querySelectorAll('#pg-home .qa');

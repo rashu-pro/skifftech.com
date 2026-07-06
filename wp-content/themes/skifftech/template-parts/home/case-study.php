@@ -1,38 +1,57 @@
 <section class="pad on-dark" id="work">
-  <div class="wrap case">
+  <div class="wrap">
 
-    <div class="case-visual reveal">
-      <div class="rib"></div>
-      <span class="bd">// CASE STUDY</span>
-      <div class="ct">
-        <b style="height:40%"></b>
-        <b style="height:55%"></b>
-        <b style="height:48%"></b>
-        <b style="height:70%"></b>
-        <b style="height:84%"></b>
-        <b style="height:96%"></b>
-      </div>
+    <div class="sec-head reveal">
+      <span class="eyebrow">Case studies</span>
+      <h2>Real Business Impact.</h2>
+      <p>Explore how we&rsquo;ve transformed ideas into scalable software solutions that drive efficiency, growth, and measurable results.</p>
     </div>
 
-    <div class="reveal" style="transition-delay:.1s">
-      <span class="eyebrow">Client story</span>
-      <h2>Cut order-processing time by 60% with a custom inventory system.</h2>
-      <p>A regional logistics operator ran on spreadsheets and disconnected tools. We replaced them with a custom inventory and order platform &mdash; live in three months.</p>
-      <div class="metrics">
-        <div class="metric">
-          <div class="v">60<span>%</span></div>
-          <div class="k">Faster processing</div>
+    <div class="reveal" data-carousel>
+      <div class="c-track">
+
+        <div class="c-slide">
+          <div class="cs-card">
+            <div class="cs-body">
+              <span class="eyebrow">Client story</span>
+              <h3>Event management platform <span class="gold-txt">built to scale.</span></h3>
+              <p>Placeholder overview &mdash; a couple of sentences on the client, the problem they faced, and the platform we built to solve it. Replace with the real story.</p>
+              <div class="cs-stats">
+                <div class="cs-stat"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><span><b>10,000+ attendees</b> managed across concurrent events.</span></div>
+                <div class="cs-stat"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><span><b>45% faster</b> on-site check-in and ticketing flow.</span></div>
+                <div class="cs-stat"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><span><b>3 months</b> from discovery to production launch.</span></div>
+              </div>
+              <a href="#contact" class="btn btn-primary">Read the full story <span class="arrow">&rarr;</span></a>
+            </div>
+            <div class="cs-media"><div class="ph"><span>Add image</span></div></div>
+          </div>
         </div>
-        <div class="metric">
-          <div class="v">3<span>mo</span></div>
-          <div class="k">To launch</div>
+
+        <div class="c-slide">
+          <div class="cs-card">
+            <div class="cs-body">
+              <span class="eyebrow">Client story</span>
+              <h3>Data analysis project <span class="gold-txt">turning data into decisions.</span></h3>
+              <p>Placeholder overview &mdash; describe the raw data challenge, what the client needed to see, and the analytics build we delivered. Replace with the real story.</p>
+              <div class="cs-stats">
+                <div class="cs-stat"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><span><b>2M+ rows</b> processed and modelled daily.</span></div>
+                <div class="cs-stat"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><span><b>60% less</b> time spent on manual reporting.</span></div>
+                <div class="cs-stat"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><span><b>12 dashboards</b> delivered for cross-team visibility.</span></div>
+              </div>
+              <a href="#contact" class="btn btn-primary">Read the full story <span class="arrow">&rarr;</span></a>
+            </div>
+            <div class="cs-media"><div class="ph"><span>Add image</span></div></div>
+          </div>
         </div>
-        <div class="metric">
-          <div class="v">40<span>%</span></div>
-          <div class="k">Less manual work</div>
-        </div>
+
+      </div><!-- .c-track -->
+
+      <div class="c-controls">
+        <button class="cnav-btn" data-dir="-1" aria-label="Previous case study">&lsaquo;</button>
+        <div class="cdots"></div>
+        <button class="cnav-btn" data-dir="1" aria-label="Next case study">&rsaquo;</button>
       </div>
-    </div>
+    </div><!-- [data-carousel] -->
 
   </div>
 </section>
