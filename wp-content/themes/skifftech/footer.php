@@ -26,13 +26,13 @@
         <a href="<?php echo esc_url( home_url( '/services/' ) ); ?>">Custom Software</a>
         <a href="<?php echo esc_url( home_url( '/services/' ) ); ?>">Consultency</a>
         <a href="<?php echo esc_url( home_url( '/services/' ) ); ?>">Data Analysis</a>
-        <a href="<?php echo esc_url( home_url( '/products/' ) ); ?>">Digital Marketing</a>
+        <!-- <a href="<?php echo esc_url( home_url( '/products/' ) ); ?>">Digital Marketing</a> -->
       </div>
 
       <div class="foot-col">
         <h5>Company</h5>
         <a href="<?php echo esc_url( home_url( '/about-us/' ) ); ?>">About Us</a>
-        <a href="<?php echo esc_url( home_url( '/team/' ) ); ?>">Team</a>
+        <a href="<?php echo esc_url( home_url( '/team-members/' ) ); ?>">Team</a>
         <a href="<?php echo esc_url( home_url( '/blogs/' ) ); ?>">Blog</a>
         <a href="<?php echo esc_url( home_url( '/contact-us/' ) ); ?>">Contact Us</a>
       </div>
