@@ -51,12 +51,13 @@
       </div>
 
       <div class="proc-media reveal" style="transition-delay:.1s">
-        <img class="proc-img" src="<?php echo esc_url( get_template_directory_uri() . '/images/image-how-we-deliver.min.jpg' ); ?>" alt="How we deliver">
+        <!-- <img class="proc-img" src="<?php // echo esc_url( get_template_directory_uri() . '/images/image-how-we-deliver.min.jpg' ); ?>" alt="How we deliver"> -->
+        <img class="proc-img" src="<?php echo esc_url( get_template_directory_uri() . '/images/team/cto.min.jpeg' ); ?>" alt="How we deliver">
         <div class="proc-pill">We&rsquo;ll be by your side!</div>
-        <!-- <div class="proc-namecard">
-          <div class="nm">Full Name</div>
-          <div class="rl">Role, Company Name</div>
-        </div> -->
+        <div class="proc-namecard">
+          <div class="nm">Mohammad Istiaque Shawn</div>
+          <div class="rl">CTO</div>
+        </div>
       </div>
 
     </div><!-- .process-split -->
