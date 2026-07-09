@@ -224,7 +224,7 @@ $skifftech_departments = array(
 			array( 'slug' => 'shahed', 'name' => 'Shahed Al Mahmud', 'role' => 'Software Developer', 'image' => 'shahed-al-mahmud.jpg' ),
 			array( 'slug' => 'muhibullah', 'name' => 'Muhibullah Khandaker', 'role' => 'Software Developer', 'image' => 'muhibullah-khandaker.jpg' ),
 			array( 'slug' => 'emdadul', 'name' => 'Md Emdadul Islam', 'role' => 'Software Developer', 'image' => 'md-emdadul-islam.jpg' ),
-			array( 'slug' => 'rashu', 'name' => 'Rashu Nath', 'role' => 'Web Developer', 'image' => 'rashu-nath.jpg' ),
+			array( 'slug' => 'rashu', 'name' => 'Rashu Nath', 'role' => 'Web Developer', 'image' => 'rashu-nath.min.jpg' ),
 		),
 	),
 
