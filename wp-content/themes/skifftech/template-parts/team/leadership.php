@@ -7,7 +7,7 @@
 
     <div class="tm-feature reveal">
       <div class="ph">
-        <img src="<?php echo esc_url( get_template_directory_uri() . '/images/team/mohammad-istiaque-shawn.jpg' ); ?>" alt="Mohammad Istiaque Shawn">
+        <img src="<?php echo esc_url( get_template_directory_uri() . '/images/team/mohammad-istiaque-shawn.jpeg' ); ?>" alt="Mohammad Istiaque Shawn">
       </div>
       <div class="bd">
         <div class="role">CTO &middot; Solutions Architect &middot; SaaS, Cloud, Data &amp; AI Systems</div>
