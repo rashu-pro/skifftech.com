@@ -232,6 +232,23 @@ function skifftech_scripts() {
 		);
 	}
 
+	// V6 about us page styles + scripts (only on About Us template)
+	if ( is_page_template( 'template-pages/about.php' ) ) {
+		wp_enqueue_style(
+			'skifftech-about',
+			$theme_uri . '/css/about.css',
+			array( 'skifftech-header-skiff' ),
+			filemtime( $theme_dir . '/css/about.css' )
+		);
+		wp_enqueue_script(
+			'skifftech-about',
+			$theme_uri . '/js/about.js',
+			array(),
+			filemtime( $theme_dir . '/js/about.js' ),
+			true
+		);
+	}
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
