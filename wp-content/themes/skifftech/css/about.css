@@ -1,0 +1,611 @@
+/* =====================================================
+   about.css — V6 About Us Page
+   Enqueued only on the About Us template.
+   Bootstrap conflict note:
+     .btn and .btn-primary exist in Bootstrap; all rules
+     here are scoped under #pg-about to override safely.
+   ===================================================== */
+
+/* ----- Base / shared (mirrors team.css component styles) ----- */
+#pg-about {
+  background: var(--night);
+  color: var(--tl);
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+#pg-about h1,
+#pg-about h2,
+#pg-about h3,
+#pg-about h4,
+#pg-about h5 {
+  font-family: "Bricolage Grotesque", "Inter", sans-serif;
+  line-height: 1.06;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+#pg-about a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#pg-about .gold-txt {
+  background: linear-gradient(100deg, var(--gold), var(--ember));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+#pg-about .eyebrow {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+#pg-about .eyebrow::before {
+  content: "";
+  width: 26px;
+  height: 1px;
+  background: var(--gold);
+  display: inline-block;
+}
+
+#pg-about .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 14px 24px;
+  border-radius: 999px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition:
+    transform 0.25s var(--ease),
+    background 0.25s,
+    box-shadow 0.25s,
+    border-color 0.25s;
+  font-family: "Inter", sans-serif;
+  text-decoration: none;
+  line-height: 1;
+}
+
+#pg-about .btn-primary {
+  background: var(--gold);
+  color: #1a1408;
+  box-shadow: 0 10px 30px -12px rgba(236, 187, 55, 0.7);
+}
+
+#pg-about .btn-primary:hover {
+  transform: translateY(-2px);
+  background: var(--gold-bright);
+  box-shadow: 0 16px 38px -12px rgba(236, 187, 55, 0.85);
+  color: #1a1408;
+}
+
+#pg-about .btn-ghost {
+  background: transparent;
+  color: var(--tl);
+  border-color: var(--line-d);
+}
+
+#pg-about .btn-ghost:hover {
+  border-color: var(--gold);
+  color: var(--gold-bright);
+  transform: translateY(-2px);
+}
+
+#pg-about .arrow {
+  font-size: 13px;
+  transition: transform 0.25s var(--ease);
+}
+
+#pg-about .btn:hover .arrow {
+  transform: translateX(3px);
+}
+
+#pg-about .reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 0.7s var(--ease),
+    transform 0.7s var(--ease);
+}
+
+#pg-about .reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+/* =====================================================
+   About page layout
+   ===================================================== */
+
+#pg-about .ab-wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding-inline: clamp(20px, 5vw, 40px);
+}
+
+#pg-about .ab-section {
+  padding-block: clamp(68px, 9vw, 116px);
+  position: relative;
+}
+
+#pg-about .ab-h2 {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+}
+
+#pg-about .ab-lead {
+  color: var(--tl-mut);
+  font-size: clamp(16px, 1.6vw, 19px);
+  max-width: 62ch;
+  line-height: 1.65;
+}
+
+#pg-about .ab-head {
+  max-width: 740px;
+  margin-bottom: clamp(36px, 5vw, 56px);
+}
+
+#pg-about .ab-head .eyebrow {
+  margin-bottom: 20px;
+}
+
+#pg-about .ab-head h2 {
+  margin-bottom: 16px;
+}
+
+#pg-about .ab-crumb {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  color: var(--tl-mut);
+  margin-bottom: 26px;
+}
+
+#pg-about .ab-crumb a {
+  color: var(--tl-mut);
+  transition: 0.2s;
+}
+
+#pg-about .ab-crumb a:hover {
+  color: var(--gold-bright);
+}
+
+#pg-about .ab-crumb .sep {
+  opacity: 0.5;
+}
+
+#pg-about .ab-crumb .cur {
+  color: var(--gold);
+}
+
+/* ---------- hero ---------- */
+#pg-about .ab-hero {
+  padding-top: 150px;
+  padding-bottom: 0;
+}
+
+#pg-about .ab-hero h1 {
+  font-size: clamp(38px, 5.8vw, 66px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  margin-bottom: 22px;
+  max-width: 840px;
+}
+
+#pg-about .ab-strip {
+  margin-top: clamp(48px, 6vw, 72px);
+  border-top: 1px solid var(--line-d);
+  border-bottom: 1px solid var(--line-d);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+#pg-about .ab-strip .cell {
+  padding: 28px 26px;
+  border-right: 1px solid var(--line-d);
+}
+
+#pg-about .ab-strip .cell:last-child {
+  border-right: 0;
+}
+
+#pg-about .ab-strip .num {
+  font-family: "Bricolage Grotesque", "Inter", sans-serif;
+  font-size: clamp(26px, 3vw, 36px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+#pg-about .ab-strip .num b {
+  color: var(--gold-bright);
+  font-weight: 700;
+}
+
+#pg-about .ab-strip .lbl {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #7a7466;
+  margin-top: 8px;
+}
+
+/* ---------- story split ---------- */
+#pg-about .ab-story {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 56px;
+  align-items: center;
+}
+
+#pg-about .ab-story .txt p {
+  color: var(--tl-mut);
+  font-size: 16px;
+  line-height: 1.72;
+  margin-bottom: 16px;
+}
+
+#pg-about .ab-story .txt p b {
+  color: var(--tl);
+}
+
+#pg-about .ab-imgph {
+  position: relative;
+  border-radius: calc(var(--r) + 4px);
+  overflow: hidden;
+  border: 1px solid var(--line-d);
+  background: var(--night-2);
+  aspect-ratio: 1615 / 974;
+  min-height: 0;
+  display: grid;
+  place-items: center;
+}
+
+#pg-about .ab-imgph img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+#pg-about .ab-imgph::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(236, 187, 55, 0.09) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+#pg-about .ab-imgph span {
+  position: relative;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--tl-mut);
+  border: 1px dashed var(--line-d);
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: rgba(16, 15, 13, 0.5);
+}
+
+/* ---------- founder's letter ---------- */
+#pg-about .ab-letter {
+  display: grid;
+  grid-template-columns: minmax(240px, 320px) 1fr;
+  gap: 0;
+  background: var(--night-2);
+  border: 1px solid rgba(236, 187, 55, 0.35);
+  border-radius: calc(var(--r) + 6px);
+  overflow: hidden;
+}
+
+#pg-about .ab-letter .ph {
+  position: relative;
+  min-height: 380px;
+}
+
+#pg-about .ab-letter .ph img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+#pg-about .ab-letter .ph::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 55%, rgba(16, 15, 13, 0.6));
+}
+
+#pg-about .ab-letter .bd {
+  padding: clamp(30px, 4.5vw, 56px);
+}
+
+#pg-about .ab-letter .salut {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 22px;
+}
+
+#pg-about .ab-letter p {
+  color: var(--tl-mut);
+  font-size: 16px;
+  line-height: 1.78;
+  margin-bottom: 18px;
+}
+
+#pg-about .ab-letter p b {
+  color: var(--tl);
+}
+
+#pg-about .ab-letter .pull {
+  border-left: 2px solid var(--gold);
+  padding-left: 18px;
+  font-family: "Bricolage Grotesque", "Inter", sans-serif;
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--tl);
+  line-height: 1.5;
+  margin: 24px 0;
+}
+
+#pg-about .ab-sign {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line-d);
+}
+
+#pg-about .ab-sign .nm {
+  font-family: "Bricolage Grotesque", "Inter", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--gold-bright);
+}
+
+#pg-about .ab-sign .rl {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #7a7466;
+  margin-top: 6px;
+}
+
+/* ---------- manifesto — how we work ---------- */
+#pg-about .ab-manif {
+  border-top: 1px solid var(--line-d);
+}
+
+#pg-about .ab-row {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 26px;
+  align-items: baseline;
+  padding: 30px 0;
+  border-bottom: 1px solid var(--line-d);
+  transition: 0.25s;
+}
+
+#pg-about .ab-row:hover h3 {
+  color: var(--gold-bright);
+}
+
+#pg-about .ab-row .n {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  color: var(--gold);
+  letter-spacing: 0.08em;
+}
+
+#pg-about .ab-row h3 {
+  font-size: clamp(19px, 2.4vw, 26px);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  transition: 0.25s;
+  margin-bottom: 6px;
+}
+
+#pg-about .ab-row p {
+  color: var(--tl-mut);
+  font-size: 14.5px;
+  line-height: 1.6;
+  max-width: 64ch;
+}
+
+/* ---------- team teaser ---------- */
+#pg-about .ab-team {
+  background: var(--night-2);
+  border: 1px solid var(--line-d);
+  border-radius: calc(var(--r) + 4px);
+  padding: clamp(30px, 4.5vw, 52px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+#pg-about .ab-team .avs {
+  display: flex;
+}
+
+#pg-about .ab-team .avs img {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  border: 2px solid var(--night-2);
+  margin-left: -14px;
+  background: var(--night-3);
+}
+
+#pg-about .ab-team .avs img:first-child {
+  margin-left: 0;
+}
+
+#pg-about .ab-team .avs .plus {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  margin-left: -14px;
+  background: rgba(236, 187, 55, 0.13);
+  border: 2px solid var(--night-2);
+  display: grid;
+  place-items: center;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  color: var(--gold-bright);
+}
+
+#pg-about .ab-team h3 {
+  font-size: clamp(20px, 2.4vw, 26px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+#pg-about .ab-team p {
+  color: var(--tl-mut);
+  font-size: 14.5px;
+  max-width: 52ch;
+}
+
+#pg-about .ab-team .txtc {
+  flex: 1;
+  min-width: 260px;
+}
+
+/* ---------- final cta ---------- */
+#pg-about .ab-final-inner {
+  background: linear-gradient(135deg, #1b1813, var(--night-3));
+  border: 1px solid rgba(236, 187, 55, 0.38);
+  border-radius: 22px;
+  padding: clamp(48px, 7vw, 84px);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+#pg-about .ab-final-inner h2 {
+  font-size: clamp(30px, 4.4vw, 50px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 18px;
+}
+
+#pg-about .ab-final-inner .ab-lead {
+  margin: 0 auto 34px;
+}
+
+#pg-about .ab-final-cta {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+}
+
+#pg-about .ab-final-inner .glow {
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(236, 187, 55, 0.12), transparent 65%);
+  top: -40%;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 980px) {
+  #pg-about .ab-story {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  #pg-about .ab-letter {
+    grid-template-columns: 1fr;
+  }
+
+  #pg-about .ab-letter .ph {
+    min-height: 320px;
+  }
+}
+
+@media (max-width: 680px) {
+  #pg-about .ab-strip {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #pg-about .ab-strip .cell {
+    border-bottom: 1px solid var(--line-d);
+  }
+
+  #pg-about .ab-strip .cell:nth-child(2n) {
+    border-right: 0;
+  }
+
+  #pg-about .ab-strip .cell:nth-child(n + 3) {
+    border-bottom: 0;
+  }
+
+  #pg-about .ab-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 24px 0;
+  }
+
+  #pg-about .ab-hero {
+    padding-top: 130px;
+  }
+
+  #pg-about .ab-team {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #pg-about * {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  #pg-about .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
