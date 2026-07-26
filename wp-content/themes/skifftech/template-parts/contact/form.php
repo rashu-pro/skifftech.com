@@ -2,14 +2,9 @@
 /**
  * Contact page — info panel + message form.
  *
- * @param array $args {
- *     @type bool   $sent  Whether the message was just sent successfully.
- *     @type string $error Validation/mail error message, if any.
- * }
+ * Message form is rendered by the Contact Form 7 plugin; success/error
+ * messaging is handled by CF7 itself (see .ct-form-side .wpcf7 styles).
  */
-
-$sent  = ! empty( $args['sent'] );
-$error = $args['error'] ?? '';
 ?>
 <section class="ct-section" style="padding-top:0" id="message">
 <div class="ct-wrap">
@@ -50,57 +45,8 @@ $error = $args['error'] ?? '';
       <h2 style="font-size:clamp(24px,3vw,32px);font-weight:800;letter-spacing:-.02em;margin:14px 0 10px">We would be delighted to hear from you</h2>
       <p class="intro" style="color:var(--tl-mut);font-size:15.5px;line-height:1.65;margin-bottom:30px">Just leave a message with some description of what you are looking for and our team will do the rest.</p>
 
-      <?php if ( $sent ) : ?>
-
-        <div class="ct-status ok">Thanks &mdash; your message has been sent. We&rsquo;ll be in touch shortly.</div>
-
-      <?php else : ?>
-
-        <?php if ( $error ) : ?>
-          <div class="ct-status err"><?php echo esc_html( $error ); ?></div>
-        <?php endif; ?>
-
-        <form id="ctForm" method="post" action="<?php echo esc_url( get_permalink() . '#message' ); ?>">
-          <?php wp_nonce_field( 'skifftech_contact_form', 'skifftech_contact_nonce' ); ?>
-          <input type="text" name="skt_hp" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
-
-          <div class="ct-field-row">
-            <div class="ct-field">
-              <label for="ct-name">Name</label>
-              <input type="text" id="ct-name" name="name" placeholder="Your full name" required>
-            </div>
-            <div class="ct-field">
-              <label for="ct-email">Email</label>
-              <input type="email" id="ct-email" name="email" placeholder="you@company.com" required>
-            </div>
-          </div>
-          <div class="ct-field-row">
-            <div class="ct-field">
-              <label for="ct-country">Country</label>
-              <select id="ct-country" name="country" required>
-                <option value="" disabled selected>Select your country</option>
-                <option>United States</option>
-                <option>United Kingdom</option>
-                <option>Canada</option>
-                <option>Australia</option>
-                <option>Germany</option>
-                <option>Bangladesh</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div class="ct-field">
-              <label for="ct-subject">Subject</label>
-              <input type="text" id="ct-subject" name="subject" placeholder="What's this about?" required>
-            </div>
-          </div>
-          <div class="ct-field">
-            <label for="ct-message">Message</label>
-            <textarea id="ct-message" name="message" placeholder="Tell us a little about what you're looking for&hellip;" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Send Message <span class="arrow">&rarr;</span></button>
-        </form>
-
-      <?php endif; ?>
+      <?php // TODO: replace YOUR_FORM_ID with the ID of the new "Contact Page Form" once created in wp-admin. ?>
+      <?php echo do_shortcode( '[contact-form-7 id="82c0752" title="Contact Form 2" html_id="ctForm"]' ); ?>
     </div>
 
   </div>
