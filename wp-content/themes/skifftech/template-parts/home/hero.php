@@ -16,19 +16,25 @@
       <ul class="proof">
         <li>
           <span class="tick">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="5 13 9 17 19 7"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <polyline points="5 13 9 17 19 7" />
+            </svg>
           </span>
           From concept and architecture to launch and long-term support
         </li>
         <li>
           <span class="tick">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="5 13 9 17 19 7"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <polyline points="5 13 9 17 19 7" />
+            </svg>
           </span>
           World-class agile product teams, deployed on demand
         </li>
         <li>
           <span class="tick">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="5 13 9 17 19 7"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <polyline points="5 13 9 17 19 7" />
+            </svg>
           </span>
           Tailored solutions engineered for enterprise scale
         </li>
@@ -54,7 +60,7 @@
         <span class="hc br"></span>
         <div class="hero-imgph-inner">
           <div class="hp-lbl">
-            <img src="<?php echo get_template_directory_uri(); ?>/images/image-hero.min.jpg" alt="skiff technologies">
+            <img src="<?php echo get_template_directory_uri(); ?>/images/potrait-skiff-hero-image.png" alt="skiff technologies">
           </div>
         </div>
       </div>
