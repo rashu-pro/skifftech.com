@@ -1,0 +1,900 @@
+/* =====================================================
+   team-profile.css — Team Member Profile Page
+   Enqueued only on the Team Profile template.
+   Bootstrap conflict note (same as team.css):
+     .btn and .btn-primary exist in Bootstrap; all rules
+     here are scoped under #pg-team-profile to override safely.
+   ===================================================== */
+
+/* ----- Base / shared (mirrors team.css component styles) ----- */
+#pg-team-profile {
+  background: var(--night);
+  color: var(--tl);
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+#pg-team-profile h1,
+#pg-team-profile h2,
+#pg-team-profile h3,
+#pg-team-profile h4 {
+  font-family: "Bricolage Grotesque", "Inter", sans-serif;
+  line-height: 1.06;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+#pg-team-profile a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#pg-team-profile .gold-txt {
+  background: linear-gradient(100deg, var(--gold), var(--ember));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+#pg-team-profile .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 14px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition:
+    transform 0.25s var(--ease),
+    background 0.25s,
+    box-shadow 0.25s,
+    border-color 0.25s;
+  font-family: "Inter", sans-serif;
+  text-decoration: none;
+  line-height: 1;
+}
+
+#pg-team-profile .btn-primary {
+  background: var(--gold);
+  color: #1a1408;
+  box-shadow: 0 10px 30px -12px rgba(236, 187, 55, 0.7);
+}
+
+#pg-team-profile .btn-primary:hover {
+  transform: translateY(-2px);
+  background: var(--gold-bright);
+  box-shadow: 0 16px 38px -12px rgba(236, 187, 55, 0.85);
+  color: #1a1408;
+}
+
+#pg-team-profile .btn-ghost {
+  background: transparent;
+  color: var(--tl);
+  border-color: var(--line-d);
+}
+
+#pg-team-profile .btn-ghost:hover {
+  border-color: var(--gold);
+  color: var(--gold-bright);
+  transform: translateY(-2px);
+}
+
+#pg-team-profile .arrow {
+  font-size: 13px;
+  transition: transform 0.25s var(--ease);
+}
+
+#pg-team-profile .btn:hover .arrow {
+  transform: translateX(3px);
+}
+
+#pg-team-profile .reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 0.7s var(--ease),
+    transform 0.7s var(--ease);
+}
+
+#pg-team-profile .reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+/* =====================================================
+   Profile layout (.pf-* namespace)
+   ===================================================== */
+#pg-team-profile .pf-wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding-inline: clamp(20px, 5vw, 40px);
+}
+
+#pg-team-profile .pf-section {
+  padding-block: clamp(56px, 7vw, 96px);
+  position: relative;
+}
+
+#pg-team-profile .pf-crumb {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  color: var(--tl-mut);
+}
+
+#pg-team-profile .pf-crumb a {
+  color: var(--tl-mut);
+  transition: 0.2s;
+}
+
+#pg-team-profile .pf-crumb a:hover {
+  color: var(--gold-bright);
+}
+
+#pg-team-profile .pf-crumb .sep {
+  opacity: 0.5;
+}
+
+#pg-team-profile .pf-crumb .cur {
+  color: var(--gold);
+}
+
+#pg-team-profile .pf-eyebrow {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#pg-team-profile .pf-h2 {
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 22px;
+}
+
+/* ---------- hero ---------- */
+#pg-team-profile .pf-hero {
+  padding-top: 140px;
+  padding-bottom: 0;
+}
+
+#pg-team-profile .pf-hero-inner {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: clamp(28px, 4vw, 44px);
+  align-items: center;
+  background: var(--night-2);
+  border-radius: 15px;
+  padding: clamp(28px, 4vw, 44px);
+  margin-top: 22px;
+  position: relative;
+  overflow: hidden;
+}
+
+#pg-team-profile .pf-hero-inner::before {
+  content: "";
+  position: absolute;
+  width: 460px;
+  height: 460px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(236, 187, 55, 0.1), transparent 65%);
+  top: -30%;
+  right: -10%;
+  pointer-events: none;
+}
+
+#pg-team-profile .pf-photo {
+  width: 220px;
+  height: 220px;
+  border-radius: var(--r);
+  overflow: hidden;
+  position: relative;
+  flex: none;
+}
+
+#pg-team-profile .pf-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+#pg-team-profile .pf-photo.noimg {
+  display: grid;
+  place-items: center;
+  background: rgba(236, 187, 55, 0.13);
+  border: 1px solid rgba(236, 187, 55, 0.32);
+}
+
+#pg-team-profile .pf-photo.noimg .init {
+  font-family: "Bricolage Grotesque", "Inter", sans-serif;
+  font-size: 56px;
+  font-weight: 700;
+  color: var(--gold-bright);
+}
+
+#pg-team-profile .pf-hero-body {
+  position: relative;
+}
+
+#pg-team-profile .pf-hero-body .role {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+
+#pg-team-profile .pf-hero-body h1 {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+}
+
+#pg-team-profile .pf-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#pg-team-profile .pf-badge {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11.5px;
+  color: var(--gold-bright);
+  background: rgba(236, 187, 55, 0.1);
+  border: 1px solid rgba(236, 187, 55, 0.32);
+  border-radius: 999px;
+  padding: 6px 14px;
+}
+
+#pg-team-profile .pf-hero-cta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ---------- professional vision (optional pull-quote) ---------- */
+#pg-team-profile .pf-vision {
+  border-left: 3px solid var(--gold);
+  background: var(--night-2);
+  border-radius: 0 14px 14px 0;
+  padding: 22px 28px;
+  font-family: "Bricolage Grotesque", "Inter", sans-serif;
+  font-size: 17.5px;
+  font-weight: 600;
+  color: var(--tl);
+  line-height: 1.6;
+}
+
+/* ---------- about ---------- */
+#pg-team-profile .pf-about p {
+  color: var(--tl-mut);
+  font-size: 16px;
+  line-height: 1.75;
+  margin-bottom: 16px;
+  max-width: 74ch;
+}
+
+#pg-team-profile .pf-about p:last-child {
+  margin-bottom: 0;
+}
+
+#pg-team-profile .pf-about b {
+  color: var(--tl);
+}
+
+#pg-team-profile .pf-about-wrap {
+  position: relative;
+  max-height: 132px;
+  overflow: hidden;
+  transition: max-height 0.4s var(--ease);
+}
+
+#pg-team-profile .pf-about-wrap.open {
+  max-height: 2000px;
+}
+
+#pg-team-profile .pf-about-wrap::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 44px;
+  background: linear-gradient(180deg, transparent, var(--night));
+  pointer-events: none;
+  transition: opacity 0.25s;
+}
+
+#pg-team-profile .pf-about-wrap.open::after {
+  opacity: 0;
+}
+
+#pg-team-profile .pf-about-more {
+  margin-top: 16px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  color: var(--gold-bright);
+  font-weight: 500;
+  font-size: 14px;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+#pg-team-profile .pf-about-more:hover {
+  color: var(--gold);
+}
+
+#pg-team-profile .pf-about-more .ar {
+  transition: transform 0.25s;
+}
+
+#pg-team-profile .pf-about-more.open .ar {
+  transform: rotate(180deg);
+}
+
+/* ---------- skills ---------- */
+#pg-team-profile .pf-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+#pg-team-profile .pf-skill {
+  font-size: 13.5px;
+  color: var(--tl-mut);
+  background: var(--night-2);
+  border: 1px solid var(--line-d);
+  border-radius: 999px;
+  padding: 9px 16px;
+  transition: 0.2s;
+}
+
+#pg-team-profile .pf-skill:hover {
+  border-color: rgba(236, 187, 55, 0.45);
+  color: var(--tl);
+}
+
+/* ---------- experience ---------- */
+#pg-team-profile .pf-job {
+  background: var(--night-2);
+  border: 1px solid var(--line-d);
+  border-radius: var(--r);
+  padding: clamp(26px, 3.5vw, 36px);
+  position: relative;
+  overflow: hidden;
+}
+
+#pg-team-profile .pf-job::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--gold), var(--gold-deep));
+}
+
+#pg-team-profile .pf-job .yr {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11.5px;
+  color: var(--gold-bright);
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+#pg-team-profile .pf-job h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+#pg-team-profile .pf-job p {
+  color: var(--tl-mut);
+  font-size: 15px;
+  line-height: 1.7;
+  max-width: 70ch;
+}
+
+/* ---------- education ---------- */
+#pg-team-profile .pf-edu {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+#pg-team-profile .pf-ed {
+  background: var(--night-2);
+  border: 1px solid var(--line-d);
+  border-radius: 14px;
+  padding: 22px 24px;
+}
+
+#pg-team-profile .pf-ed .dg {
+  font-size: 15.5px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+#pg-team-profile .pf-ed .in {
+  font-size: 13.5px;
+  color: var(--tl-mut);
+}
+
+/* ---------- language & tool chips ---------- */
+#pg-team-profile .pf-langs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+#pg-team-profile .pf-lang {
+  font-size: 13.5px;
+  color: var(--tl-mut);
+  background: var(--night-2);
+  border: 1px solid var(--line-d);
+  border-radius: 999px;
+  padding: 9px 16px;
+  transition: 0.2s;
+}
+
+#pg-team-profile .pf-lang:hover {
+  border-color: rgba(236, 187, 55, 0.4);
+  color: var(--tl);
+}
+
+/* ---------- certifications carousel ---------- */
+#pg-team-profile .pf-cert-car {
+  position: relative;
+}
+
+#pg-team-profile .pf-cert-track {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding: 4px 4px 22px;
+  margin: 0 -4px;
+}
+
+#pg-team-profile .pf-cert-track::-webkit-scrollbar {
+  display: none;
+}
+
+#pg-team-profile .pf-cert {
+  flex: 0 0 clamp(220px, 26vw, 270px);
+  scroll-snap-align: start;
+  background: var(--night-2);
+  border: 1px solid var(--line-d);
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.25s var(--ease);
+  text-align: left;
+  padding: 0;
+}
+
+#pg-team-profile .pf-cert:hover {
+  transform: translateY(-4px);
+  border-color: rgba(236, 187, 55, 0.45);
+}
+
+#pg-team-profile .pf-cert .th {
+  position: relative;
+  aspect-ratio: 4/3;
+  background: var(--night-3);
+  overflow: hidden;
+}
+
+#pg-team-profile .pf-cert .th img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s var(--ease);
+}
+
+#pg-team-profile .pf-cert:hover .th img {
+  transform: scale(1.05);
+}
+
+#pg-team-profile .pf-cert .th::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 60%, rgba(16, 15, 13, 0.55));
+}
+
+#pg-team-profile .pf-cert .th.noimg {
+  display: grid;
+  place-items: center;
+}
+
+#pg-team-profile .pf-cert .th.noimg::after {
+  content: none;
+}
+
+#pg-team-profile .pf-cert .th.noimg .badge-ic {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(236, 187, 55, 0.14);
+  display: grid;
+  place-items: center;
+}
+
+#pg-team-profile .pf-cert .th.noimg .badge-ic svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--gold-bright);
+  fill: none;
+  stroke-width: 1.6;
+}
+
+#pg-team-profile .pf-cert .zoom {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(16, 15, 13, 0.75);
+  border: 1px solid rgba(236, 187, 55, 0.35);
+  display: grid;
+  place-items: center;
+  z-index: 2;
+}
+
+#pg-team-profile .pf-cert .zoom svg {
+  width: 15px;
+  height: 15px;
+  stroke: var(--gold-bright);
+  fill: none;
+  stroke-width: 1.8;
+}
+
+#pg-team-profile .pf-cert .bd {
+  padding: 16px 18px;
+}
+
+#pg-team-profile .pf-cert .src {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+
+#pg-team-profile .pf-cert h4 {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 8px;
+  min-height: 39px;
+}
+
+#pg-team-profile .pf-cert .dt {
+  font-size: 11px;
+  color: #6b665c;
+  font-style: italic;
+}
+
+#pg-team-profile .pf-cert-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 6px;
+}
+
+#pg-team-profile .pf-cert-arrows {
+  display: flex;
+  gap: 10px;
+}
+
+#pg-team-profile .pf-cnav {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--night-2);
+  border: 1px solid var(--line-d);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#pg-team-profile .pf-cnav:hover {
+  border-color: var(--gold);
+  background: rgba(236, 187, 55, 0.1);
+}
+
+#pg-team-profile .pf-cnav svg {
+  width: 17px;
+  height: 17px;
+  stroke: var(--tl);
+  fill: none;
+  stroke-width: 1.8;
+}
+
+#pg-team-profile .pf-cnav:hover svg {
+  stroke: var(--gold-bright);
+}
+
+/* cert lightbox */
+#pg-team-profile .pf-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 250;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(10, 9, 8, 0.88);
+  backdrop-filter: blur(6px);
+}
+
+#pg-team-profile .pf-lightbox.open {
+  display: flex;
+}
+
+#pg-team-profile .pf-lb-inner {
+  max-width: min(880px, 92vw);
+  max-height: 88vh;
+  position: relative;
+  animation: pfIn 0.25s var(--ease);
+}
+
+@keyframes pfIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+#pg-team-profile .pf-lb-inner img {
+  width: 100%;
+  height: 100%;
+  max-height: 88vh;
+  object-fit: contain;
+  border-radius: 14px;
+  border: 1px solid rgba(236, 187, 55, 0.35);
+}
+
+#pg-team-profile .pf-lb-close {
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--night-2);
+  border: 1px solid var(--line-d);
+  color: var(--tl);
+  cursor: pointer;
+  font-size: 18px;
+  display: grid;
+  place-items: center;
+  transition: 0.2s;
+}
+
+#pg-team-profile .pf-lb-close:hover {
+  border-color: var(--gold);
+  color: var(--gold-bright);
+}
+
+#pg-team-profile .pf-lb-cap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -42px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--tl-mut);
+}
+
+/* ---------- recommendations ---------- */
+#pg-team-profile .pf-rec-list {
+  max-width: 760px;
+}
+
+#pg-team-profile .pf-rec-item {
+  padding: 30px 0;
+  border-bottom: 1px solid var(--line-d);
+  margin-bottom: 30px;
+}
+
+#pg-team-profile .pf-rec-item:first-child {
+  padding-top: 0;
+}
+
+#pg-team-profile .pf-rec-item.pf-rec-hidden {
+  display: none;
+}
+
+#pg-team-profile .pf-rec-head .nm {
+  font-size: 15.5px;
+  font-weight: 700;
+  color: var(--tl);
+  line-height: 1.35;
+}
+
+#pg-team-profile .pf-rec-head .ti {
+  font-size: 13px;
+  color: #7a7466;
+  line-height: 1.5;
+  margin-top: 2px;
+  max-width: 60ch;
+}
+
+#pg-team-profile .pf-rec-item .rel {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  color: var(--gold);
+  letter-spacing: 0.02em;
+  margin: 8px 0 12px;
+}
+
+#pg-team-profile .pf-rec-quote {
+  font-size: 14.5px;
+  color: var(--tl-mut);
+  line-height: 1.72;
+  position: relative;
+  max-height: 132px;
+  overflow: hidden;
+  transition: max-height 0.35s var(--ease);
+  max-width: 70ch;
+}
+
+#pg-team-profile .pf-rec-quote.open {
+  max-height: 2000px;
+}
+
+#pg-team-profile .pf-rec-quote::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 34px;
+  background: linear-gradient(180deg, transparent, var(--night));
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+#pg-team-profile .pf-rec-quote.open::after {
+  opacity: 0;
+}
+
+#pg-team-profile .pf-rec-more {
+  margin-top: 12px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  color: var(--gold-bright);
+  font-weight: 500;
+  font-size: 13.5px;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+}
+
+#pg-team-profile .pf-rec-more:hover {
+  color: var(--gold);
+}
+
+/* ---------- contact / CTA ---------- */
+#pg-team-profile .pf-final-inner {
+  background: var(--night-2);
+  border: 1px solid rgba(236, 187, 55, 0.35);
+  border-radius: 18px;
+  padding: clamp(34px, 5vw, 52px) clamp(28px, 5vw, 48px);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+#pg-team-profile .pf-final-inner h2 {
+  font-size: clamp(24px, 3.2vw, 34px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+
+#pg-team-profile .pf-final-inner p {
+  color: var(--tl-mut);
+  font-size: 15px;
+  max-width: 56ch;
+  margin: 0 auto 24px;
+}
+
+#pg-team-profile .pf-final-cta {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+}
+
+#pg-team-profile .pf-final-cta .btn {
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 13.5px;
+}
+
+#pg-team-profile .pf-final-inner .glow {
+  position: absolute;
+  width: 460px;
+  height: 260px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(236, 187, 55, 0.16), transparent 70%);
+  top: -30%;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 900px) {
+  #pg-team-profile .pf-hero-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding-top: 36px;
+  }
+  #pg-team-profile .pf-photo {
+    margin: 0 auto;
+  }
+  #pg-team-profile .pf-badges,
+  #pg-team-profile .pf-hero-cta {
+    justify-content: center;
+  }
+  #pg-team-profile .pf-edu {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  #pg-team-profile .pf-hero {
+    padding-top: 120px;
+  }
+  #pg-team-profile .pf-lb-close {
+    top: -52px;
+    right: 0;
+  }
+  #pg-team-profile .pf-cert {
+    flex-basis: 78vw;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #pg-team-profile .pf-job,
+  #pg-team-profile .pf-cert {
+    transition: none !important;
+  }
+}
