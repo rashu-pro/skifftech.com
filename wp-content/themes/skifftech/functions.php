@@ -232,6 +232,23 @@ function skifftech_scripts() {
 		);
 	}
 
+	// V6 team member profile page styles + scripts (only on Team Profile template)
+	if ( is_page_template( 'template-pages/team-profile.php' ) ) {
+		wp_enqueue_style(
+			'skifftech-team-profile',
+			$theme_uri . '/css/team-profile.css',
+			array( 'skifftech-header-skiff' ),
+			filemtime( $theme_dir . '/css/team-profile.css' )
+		);
+		wp_enqueue_script(
+			'skifftech-team-profile',
+			$theme_uri . '/js/team-profile.js',
+			array(),
+			filemtime( $theme_dir . '/js/team-profile.js' ),
+			true
+		);
+	}
+
 	// V6 contact page styles + scripts (only on Contact Us template)
 	if ( is_page_template( 'template-pages/contact.php' ) ) {
 		wp_enqueue_style(
@@ -274,6 +291,11 @@ require get_template_directory() . '/inc/template-functions.php';
  * shortcode
  */
 require get_template_directory() . '/inc/shortcode.php';
+
+/**
+ * Team member profile pages — data helpers + auto-provisioning.
+ */
+require get_template_directory() . '/inc/team-profile.php';
 
 /**
  * Customizer additions.
