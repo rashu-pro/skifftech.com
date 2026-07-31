@@ -17,7 +17,7 @@ require get_theme_file_path( 'template-parts/team/team-data.php' );
     <div class="tm-head reveal">
       <span class="eyebrow">The team</span>
       <h2 class="tm-h2">The people you&rsquo;ll actually work with.</h2>
-      <p class="tm-lead">No bait-and-switch &mdash; the profiles below are the engineers, analysts, and QA specialists who staff our engagements. Open any profile for full experience and skills.</p>
+      <p class="tm-lead">The profiles below are the engineers, analysts, and QA specialists who staff our engagements.</p>
     </div>
 
     <?php foreach ( $skifftech_departments as $dept ) : ?>
