@@ -14,7 +14,7 @@
         <h3>Mohammad Istiaque Shawn</h3>
         <p>I help startups and businesses design, build, and scale software systems that are reliable, cost-efficient, and built for growth.</p>
         <p>As a CTO and Solutions Architect at SKIFF Technologies, I&rsquo;ve led the development of production-grade systems across SaaS platforms, data analytics, and cloud infrastructure. I specialize in transforming complex business requirements into scalable technical solutions that actually deliver results.</p>
-        <div class="pull">&ldquo;I don&rsquo;t just develop software &mdash; I design systems that support long-term business success.&rdquo;</div>
+        <div class="pull">&ldquo;I don&rsquo;t just develop software I design systems that support long-term business success.&rdquo;</div>
       </div>
     </div>
   </div>
