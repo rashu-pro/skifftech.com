@@ -155,6 +155,11 @@ $skifftech_departments = array(
 				'image' => 'abdul-moktadir.jpg',
 				'modal' => array(
 					'exp2' => '14+ years experience',
+					'bio'  => array(
+						'<b>Senior Backend Engineer with 15+ years of experience designing enterprise applications, database systems, and business automation solutions.</b>',
+						'Strong expertise in SQL Server, T-SQL optimization, ASP.NET Core APIs, data migration, and enterprise application architecture.',
+						'Currently specializing in Python backend development and AI-powered automation using FastAPI, LLMs, and AI Agents.',
+					),
 					'jobs' => array(
 						array( '2021 — Present', 'Sr. SQL Data Analyst · Dominion DMS', 'Working with SQL Server to analyze data, build queries, and develop automation tools using C# and Python for reporting and decision support.' ),
 						array( '2011 — 2021', 'Sr. IT Executive (Software Developer) · KDS Accessories', 'Developed enterprise applications and web systems using ASP.NET and SQL Server, including reporting and business management solutions.' ),
@@ -172,6 +177,15 @@ $skifftech_departments = array(
 						array( 'JavaScript', 62, 'Intermediate' ),
 						array( 'Python', 62, 'Intermediate' ),
 					),
+					'certifications' => array(
+						array( 'source' => 'HackerRank', 'title' => 'SQL (Intermediate) — Certificate of Accomplishment', 'date' => 'Issued May 8, 2022', 'image' => get_template_directory_uri() . '/images/team/certs/cert-moktadir-sql-intermediate-hackerrank.jpg' ),
+						array( 'source' => 'HackerRank', 'title' => 'SQL (Basic) — Certificate of Accomplishment', 'date' => 'Issued Sep 15, 2020', 'image' => get_template_directory_uri() . '/images/team/certs/cert-moktadir-sql-basic-hackerrank.jpg' ),
+					),
+					'recommendations' => array(
+						array( 'name' => 'Paul Whipps, LSSBB', 'title' => 'Vice President of Technology', 'relationship' => 'Paul was senior to Mohammad but didn&#x27;t manage Mohammad directly', 'quote' => 'In my interactions with Mohammad Moktadir, I was impressed by their dedication and professionalism. I appreciated Moktadir&#x27;s work and proactive updates on data conversions within his team. He displayed great attention to detail and a strong work ethic. Mohammad is a reliable, knowledgeable, and easy to work with. I am confident that they will be an asset to any team.' ),
+						array( 'name' => 'Tony Garcia', 'title' => 'Director of IT Delivery at SouthEast Toyota Finance', 'relationship' => 'Tony was senior to Mohammad but didn&#x27;t manage Mohammad directly', 'quote' => 'I had the pleasure of working with Mohammad during my tenure at Dominion DMS, where he served as a Database Developer. Mohammad was a critical resource in dealership data conversions, handling complex mappings and addressing data-related issues in real time with precision and efficiency. What truly sets Mohammad apart is his unwavering commitment to delivery. He consistently rose to the challenge in high-pressure situations, ensuring that data migrations and implementations were completed accurately and on time. His ability to troubleshoot issues quickly while maintaining a strong focus on quality made a significant impact on project success. In addition to his technical expertise, Mohammad is a reliable and dedicated professional who approaches his work with a strong sense of ownership. He is truly an excellent developer to have on any team, and I highly recommend him for any role requiring data expertise, problem-solving, and commitment to results.' ),
+						array( 'name' => 'Rayhan Ahmed Sajib', 'title' => 'Data Analyst Manager · Data Engineering Manager · 16+ Years', 'relationship' => 'Rayhan Ahmed managed Mohammad directly', 'quote' => 'Very efficient data analyst. Holds very good knowledge in PL/SQL and .Net programming. Honest, kind and helpful team member.' ),
+					),
 				),
 			),
 			array(
@@ -181,7 +195,11 @@ $skifftech_departments = array(
 				'exp'   => '17+ yrs',
 				'image' => 'muhammad-abdur-rahman.jpg',
 				'modal' => array(
-					'exp2' => '17+ years experience',
+					'exp2' => '18+ years experience',
+					'bio'  => array(
+						'<b>Muhammad Abdur Rahman is a dedicated, meticulous team player with more than eighteen (18) years of experience in project management, team coordination, decision making, customer and stakeholder communication, and documentation related to project management — alongside writing code, testing, and support for software applications across different programming languages.</b>',
+						'He brings nine (9) years of intense experience in project management, backed by professional certification as a PMP (Project Management Professional) from PMI and an ACMP (Advanced Certificate of Management Professional) from IBA — University of Dhaka. He has extensive exposure in database systems and analytical techniques, transforming complex, multi-source datasets into structured, high-quality data for reporting and business operations.',
+					),
 					'jobs' => array(
 						array( '2021 — Present', 'Sr. Data Analyst · Skiff Technologies (Dominion Dealer Solutions)', 'Designing and maintaining scalable ETL pipelines using SSIS and Azure Data Factory to process millions of records for the US automotive domain.' ),
 						array( '2019 — 2021', 'Sr. Principal Officer · United Finance Ltd', 'Led the end-to-end implementation of Core Banking Solutions (CBS), including GAP analysis, stakeholder management, and business requirement documentation.' ),
@@ -198,6 +216,12 @@ $skifftech_departments = array(
 						array( 'VB.NET', 82, 'Advanced' ),
 						array( 'JavaScript', 38, 'Basic' ),
 					),
+					'certifications' => array(
+						array( 'source' => 'DCCI Business Institute (DBI) &amp; Daffodil International University (DIU)', 'title' => 'Financial Technology (FIN-TECH)', 'date' => 'Issued Dec 2021' ),
+						array( 'source' => 'Project Management Institute', 'title' => 'Project Management Professional (PMP)', 'date' => 'Issued Dec 2021' ),
+						array( 'source' => 'Institute of Business Administration, University of Dhaka', 'title' => 'Advanced Certificate For Management Professionals (ACMP)', 'date' => 'Issued Apr 2018 · Credential ID 10845' ),
+						array( 'source' => 'Cisco', 'title' => 'CISCO Certified Network Associate (CCNA)', 'date' => 'Issued Dec 2005 · Expired Dec 2007 · Credential ID CSCO11004732' ),
+					),
 				),
 			),
 			array(
@@ -208,6 +232,9 @@ $skifftech_departments = array(
 				'image' => 'ashraful-alam-akand.jpg',
 				'modal' => array(
 					'exp2' => '17+ years experience',
+					'bio'  => array(
+						'<b>Senior Data Engineer with 17+ years of experience in software and data systems, focused on ETL pipelines, data consolidation, reporting systems, and large-scale data migration.</b>',
+					),
 					'jobs' => array(
 						array( '2021 — Present', 'Sr. Data Engineer · Dominion DMS (USA · Remote) / Skiff Technologies', 'Designing and maintaining complex ETL pipelines using SSIS and Azure Data Factory to process millions of records while achieving 30–40% performance improvement through advanced SQL tuning and indexing strategies.' ),
 						array( '2020 — 2021', 'Data Analyst · Bitopi Group', 'Developed structured reporting workflows for manufacturing (RMG) operations, reducing manual reporting effort by 40–50% and improving data accuracy through automated validation rules.' ),
@@ -235,6 +262,10 @@ $skifftech_departments = array(
 				'initials' => 'MB',
 				'modal' => array(
 					'exp2' => '7+ years experience',
+					'bio'  => array(
+						'<b>Organized, reliable, and data-driven data analyst and engineer with over 7 years of experience transforming complex datasets into clear, actionable insights, building dashboards, reports, and ADF pipelines, and validating data accuracy.</b>',
+						'Skilled in Power BI, SQL Server, SSIS, Azure tools, and Python, with a strong background in data warehousing, DAX, and query optimization. Committed to turning complex data findings into actionable strategies that drive organizational success.',
+					),
 					'jobs' => array(
 						array( '2023 — Present', 'SKIFF Technologies', 'Designing ETL workflows and ADF pipelines while managing data health reporting and automated testing for DMS sources.' ),
 						array( '2022 — 2023', 'Brain Station 23', 'Managed large-scale data migration projects and resolved complex data discrepancies using SQL and SSIS.' ),
@@ -253,6 +284,16 @@ $skifftech_departments = array(
 						array( 'HTML5', 38, 'Basic' ),
 						array( 'CSS3', 38, 'Basic' ),
 					),
+					'certifications' => array(
+						array( 'source' => 'CognitiveClass.ai · IBM', 'title' => 'Data Analysis with Python (DA0101EN)', 'date' => 'Issued Nov 16, 2020', 'image' => get_template_directory_uri() . '/images/team/certs/cert-missba-data-analysis-python-ibm.jpg' ),
+						array( 'source' => 'CognitiveClass.ai · IBM', 'title' => 'Python 101 for Data Science (PY0101EN)', 'date' => 'Issued Nov 9, 2020', 'image' => get_template_directory_uri() . '/images/team/certs/cert-missba-python-101-data-science-ibm.jpg' ),
+					),
+					'recommendations' => array(
+						array( 'name' => 'Rifat Jahan Azad', 'title' => 'Leading Technology Innovations', 'relationship' => 'Rifat Jahan managed Missba directly', 'quote' => 'I have worked with Missba for a brief amount of time, but during this time I found her calm, collected, and focused on her goals. She is visionary and very much concerned about clients&#x27; well-being. Her dedication amazed us. We hope for the best for her in the coming days.' ),
+						array( 'name' => 'Doly Akter', 'title' => 'Data Engineer · Data Analyst · Cloud Pipelines · BI Developer', 'relationship' => 'Doly worked with Missba on the same team', 'quote' => 'Missba Banu is not only a fantastic Power BI specialist but also a true team player. As a data analyst, she is also proficient in SQL programming, Azure Data Factory pipelines, ETL, Python, and also knowledgeable in DAX. She consistently goes above and beyond to ensure the team has the data needed for strategic decisions. Her ability to explain complex data models in simple terms helped bridge the gap between our technical teams. She is a reliable, enthusiastic developer who brings fresh ideas to the table! Best of luck for her future endeavour. I highly recommend her for her successful IT profession.' ),
+						array( 'name' => 'Asif Islam', 'title' => 'Data Analyst · SQL Programming, DBA · Team Lead · Agile Development', 'relationship' => 'Asif managed Missba directly', 'quote' => 'I have worked with Missba Banu for 5+ years. As a teammate I found her sincere and energetic, delivering high-quality work. She brings strong expertise in data analysis, SQL Server stored procedure development, Power BI, and Python. She is a continuous learner and aligns with the latest technologies. She raised valuable points during development meetings and also discussed possible solutions. I wish her all the best for her future endeavors.' ),
+						array( 'name' => 'Russell Gibson', 'title' => 'Senior Data Engineer · Azure Data Factory · SQL/T-SQL · ETL/ELT', 'relationship' => 'Russell managed Missba directly', 'quote' => 'Missba was a strong addition to the conversion team at Dominion DMS. She demonstrated solid knowledge of SQL and ETL processes and consistently delivered her workloads on time. I truly enjoyed working with Missba and appreciated her reliability and professionalism.' ),
+					),
 				),
 			),
 			array(
@@ -263,6 +304,10 @@ $skifftech_departments = array(
 				'image' => 'doly-akter.jpg',
 				'modal' => array(
 					'exp2' => '10+ years experience',
+					'bio'  => array(
+						'<b>Data Engineer and Business Intelligence Analyst with 4+ years of experience developing automated and scalable solutions. Skilled in SQL, ETL, and cloud-based pipelines with Azure. Proficient in creating Power BI dashboards and handling large datasets. She considers herself a technology and learning enthusiast — there have never been excuses when learning something new, and she&#x27;s especially interested in working and learning more about data engineering with Microsoft on the cloud.</b>',
+						'Proficient in analyzing, designing, developing, and implementing changes to existing SSRS reports, Power BI applications, ETL processes, data marts, and data models.',
+					),
 					'jobs' => array(
 						array( '2022 — Present', 'Skiff Technologies (Dominion DMS)', 'Designs and manages cloud-based ETL pipelines using Azure Data Factory and SQL to ensure data accuracy and reporting.' ),
 						array( '2019 — 2022', 'Southtech Limited · Senior Programmer', 'Led financial software development using .NET, handled database design, and managed CMMI Level 5 process auditing.' ),
@@ -284,6 +329,16 @@ $skifftech_departments = array(
 						array( 'Java', 62, 'Intermediate' ),
 						array( 'C / C++', 62, 'Intermediate' ),
 					),
+					'certifications' => array(
+						array( 'source' => 'CMMI Institute', 'title' => 'Certified Associate — CMMI V2.0', 'date' => 'Issued Jul 2019' ),
+					),
+					'recommendations' => array(
+						array( 'name' => 'Jose Arcos', 'title' => 'Data Engineer · Azure · Power BI · SQL · ETL · Python', 'relationship' => 'Jose worked with Doly on the same team', 'quote' => 'I had the pleasure of working with Doly at Dominion, and I can confidently say she is a highly skilled and dependable professional. She has strong technical expertise in data engineering, SQL, ETL development, and cloud technologies, and she consistently delivers high-quality work with great attention to detail. Beyond her technical skills, Doly is also collaborative, supportive, and easy to work with. She always brought a positive attitude to the team and was willing to help others whenever needed. I truly enjoyed working alongside her and would highly recommend her to any organization looking for a talented data professional.' ),
+						array( 'name' => 'Missba Banu', 'title' => 'Data Engineer · Data Analyst · BI Developer · Power BI · Python · DBT', 'relationship' => 'Missba worked with Doly but on different teams', 'quote' => 'I have had the privilege of working closely with Doly for the past three years. During this time, I found her as dedicated, and hardworking person. One of her strongest qualities is her ability to deliver projects on time without compromising quality.' ),
+						array( 'name' => 'Abu Syed Mohammad Noman', 'title' => 'Software &amp; Data Solution Specialist', 'relationship' => 'Abu Syed Mohammad worked with Doly on the same team', 'quote' => 'I have known Doly Akter professionally for over four years and have been consistently impressed by her dedication and capabilities. She has built strong technical knowledge in Azure Data Factory (ADF) ETL development, along with valuable experience in Data Analysis, SQL Server stored procedures, Power BI, and CSS. What sets Doly apart is her willingness to learn and adapt to new technologies. She continuously improves her skills and stays updated with modern tools and practices. She is also supportive, cooperative, and works well within a team environment, making her a reliable colleague to work with. Doly is someone who can be trusted to handle routine deliverables efficiently and responsibly, always maintaining quality and meeting expectations. I am confident she will continue to achieve great success in her career, and I wish her all the best for the future.' ),
+						array( 'name' => 'Asif Islam', 'title' => 'Data Analyst · SQL Programming, DBA · Team Lead · Agile Development', 'relationship' => 'Asif was senior to Doly but didn&#x27;t manage Doly directly', 'quote' => 'I have worked with Doly Akter for more than 4 years. She has gained a very good level for building ADF ETL processes. Also, she brings strong expertise in Data Analysis, SQL Server stored procedure development, Power BI, and CSS. She is a continuous learner and aligns with the latest technologies. Doly is very cooperative and a team player. For any regular task-oriented delivery, she can be trusted without any doubt. I wish her all the best for her future endeavours.' ),
+						array( 'name' => 'Md. Nazrul Islam Khan (Shohagh)', 'title' => 'Technical Project Manager · CSM® · Java · Spring Boot · SQL · Fintech', 'relationship' => 'Md. Nazrul Islam was senior to Doly but didn&#x27;t manage Doly directly', 'quote' => 'Doly is a very good team member and a very sincere and honest employee. I can definitely say that she is not only one of the most dedicated resources of our organization but also a highly technical person. She is very dynamic in her workplace. I wish her success in her career ahead.' ),
+					),
 				),
 			),
 		),
@@ -292,7 +347,40 @@ $skifftech_departments = array(
 	array(
 		'title'   => 'Product &amp; Development Operations',
 		'members' => array(
-			array( 'slug' => 'shahed', 'name' => 'Shahed Al Mahmud', 'role' => 'Software Developer', 'image' => 'shahed-al-mahmud.jpg' ),
+			array(
+				'slug'  => 'shahed',
+				'name'  => 'Shahed Al Mahmud',
+				'role'  => 'Senior Developer',
+				'exp'   => '14+ yrs',
+				'image' => 'shahed-al-mahmud.jpg',
+				'modal' => array(
+					'exp2' => '14+ years experience',
+					'bio'  => array(
+						'<b>Shahed Al Mahmud is an experienced Software Developer with a demonstrated history of working in the information technology and SaaS industry.</b>',
+						'Skilled in diverse facets of back-end development, project planning, and database design and development, he specializes in converting business ideas and requirements into real, working applications — with a particular passion for software architecture, system design, and IT-based product development.',
+					),
+					'jobs' => array(
+						array( '2023 — Present', 'Senior Developer · Skiff Technologies', 'Leads back-end development and system design, translating business requirements into scalable, production-ready applications.' ),
+					),
+					'education' => array(
+						array( 'Bachelor of Social Science, Economics', 'East West University · 2009 – 2014' ),
+						array( 'H.S.C, Science', 'Ideal College · 2006 – 2008' ),
+						array( 'S.S.C, Science', 'Government Laboratory High School, Dhaka · 1996 – 2006' ),
+					),
+					'skills'    => array( 'Backend Development', 'Software Architecture', 'System Design', 'Database Design &amp; Development', 'Project Planning' ),
+					'languages' => array(
+						array( '.NET Core', 100, 'Expert' ),
+						array( 'ASP.NET', 100, 'Expert' ),
+						array( 'Java', 82, 'Advanced' ),
+						array( 'Python', 82, 'Advanced' ),
+						array( 'C++', 62, 'Intermediate' ),
+						array( 'JavaScript', 62, 'Intermediate' ),
+						array( 'Node.js', 62, 'Intermediate' ),
+						array( 'C', 62, 'Intermediate' ),
+						array( 'SQL', 62, 'Intermediate' ),
+					),
+				),
+			),
 			array( 'slug' => 'muhibullah', 'name' => 'Muhibullah Khandaker', 'role' => 'Software Developer', 'image' => 'muhibullah-khandaker.jpg' ),
 			array( 'slug' => 'emdadul', 'name' => 'Md Emdadul Islam', 'role' => 'Software Developer', 'image' => 'md-emdadul-islam.jpg' ),
 			array( 'slug' => 'rashu', 'name' => 'Rashu Nath', 'role' => 'Web Developer', 'image' => 'rashu-nath.min.jpg' ),

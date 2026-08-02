@@ -154,3 +154,18 @@ function skifftech_provision_team_profile_pages() {
 	}
 }
 add_action( 'admin_init', 'skifftech_provision_team_profile_pages' );
+
+/**
+ * Also provision on the front-end Team page itself, so a newly-added member
+ * gets a working "View profile" link the next time anyone loads that page —
+ * no admin visit required. Scoped to just this one template, not every
+ * front-end request, to keep the extra lookups cheap.
+ */
+add_action(
+	'template_redirect',
+	function() {
+		if ( is_page_template( 'template-pages/team.php' ) ) {
+			skifftech_provision_team_profile_pages();
+		}
+	}
+);
