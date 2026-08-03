@@ -1388,19 +1388,24 @@
 
 #pg-home .proc-media {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
   border-radius: calc(var(--r) + 8px);
   overflow: hidden;
   background: linear-gradient(135deg, var(--night-3), #1a1712);
   border: 1px solid var(--line-d);
-  min-height: 540px;
+  min-height: 480px;
 }
 
+/* Aspect-ratio drives the height, not the source file's 3:4 portrait —
+   otherwise the card grows to the image's natural height and dwarfs the left column. */
 #pg-home .proc-media .proc-img {
-  position: absolute;
-  inset: 0;
+  flex: 1 0 auto;
   width: 100%;
-  /* height: 100%; */
-  object-fit: fill;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: 50% 0%; /* anchor top — overflow is cropped from the bottom only */
   display: block;
 }
 
@@ -1428,46 +1433,42 @@
   background: rgba(16, 15, 13, 0.45);
 }
 
-#pg-home .proc-pill {
-  position: absolute;
-  top: 24px;
-  left: 24px;
-  z-index: 2;
+/* Quote panel — flush to the bottom of the image, part of the same card.
+   No side borders / radius / shadow, so it reads as attached, not a separate box. */
+#pg-home .proc-quote {
+  flex: none;
+  padding: 20px 24px 22px;
   background: var(--night-2);
-  border: 1px solid var(--line-d);
-  border-radius: 999px;
-  padding: 12px 20px;
-  font-size: 14.5px;
+  border-top: 1px solid var(--line-d);
+}
+
+#pg-home .proc-quote .qt {
+  margin: 0;
+  font-size: 15px;
   font-weight: 600;
+  line-height: 1.55;
   color: var(--tl);
-  box-shadow: 0 16px 40px -22px rgba(0, 0, 0, 0.75);
+  text-wrap: pretty;
 }
 
-#pg-home .proc-namecard {
-  position: absolute;
-  left: 24px;
-  right: 24px;
-  bottom: 24px;
-  z-index: 2;
-  background: var(--night-2);
-  border: 1px solid var(--line-d);
-  border-radius: 16px;
-  padding: 18px 22px;
-  box-shadow: 0 24px 54px -26px rgba(0, 0, 0, 0.85);
+#pg-home .proc-quote .at {
+  margin: 12px 0 0;
+  font-size: 13.5px;
+  color: var(--gold);
 }
 
-#pg-home .proc-namecard .nm {
+#pg-home .proc-quote .at .qnm {
   font-family: "Bricolage Grotesque", "Inter", sans-serif;
   font-weight: 700;
-  font-size: 19px;
+  font-size: 15px;
   letter-spacing: -0.01em;
-  color: var(--tl);
+  color: var(--gold);
 }
 
-#pg-home .proc-namecard .rl {
+#pg-home .proc-quote .qrl {
+  margin: 2px 0 0;
   font-size: 13.5px;
   color: var(--tl-mut);
-  margin-top: 2px;
 }
 
 /* =====================================================
@@ -1702,7 +1703,7 @@
     gap: 44px;
   }
   #pg-home .proc-media {
-    min-height: 400px;
+    min-height: 480px;
     order: -1;
   }
   #pg-home .cs-card {

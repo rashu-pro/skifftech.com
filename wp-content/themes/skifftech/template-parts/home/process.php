@@ -51,15 +51,15 @@
         <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn-primary">Schedule a Meeting <span class="arrow">&#8594;</span></a>
       </div>
 
-      <div class="proc-media reveal" style="transition-delay:.1s">
+      <figure class="proc-media reveal" style="transition-delay:.1s">
         <!-- <img class="proc-img" src="<?php // echo esc_url( get_template_directory_uri() . '/images/image-how-we-deliver.min.jpg' ); ?>" alt="How we deliver"> -->
-        <img class="proc-img" src="<?php echo esc_url( get_template_directory_uri() . '/images/team/cto.min.jpeg' ); ?>" alt="How we deliver">
-        <div class="proc-pill">You'll work with engineers, I stay personally involved in every build.</div>
-        <div class="proc-namecard">
-          <div class="nm">Mohammad Istiaque Shawn</div>
-          <div class="rl">CTO</div>
-        </div>
-      </div>
+        <img class="proc-img" src="<?php echo esc_url( get_template_directory_uri() . '/images/team/cto.min.jpeg' ); ?>" alt="Mohammad Istiaque Shawn, CTO &amp; Founder">
+        <figcaption class="proc-quote">
+          <p class="qt">&ldquo;You&rsquo;ll work with engineers, not account managers. I stay personally involved in every build.&rdquo;</p>
+          <p class="at">&mdash; <span class="qnm">Mohammad Istiaque Shawn</span></p>
+          <p class="qrl">CTO &amp; Founder</p>
+        </figcaption>
+      </figure>
 
     </div><!-- .process-split -->
 
