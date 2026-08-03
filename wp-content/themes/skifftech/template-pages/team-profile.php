@@ -108,16 +108,17 @@ get_header();
 <?php endif; ?>
 
 <?php if ( ! empty( $mo['jobs'] ) ) : ?>
-<!-- ============ EXPERIENCE (current Skiff role only, featured) ============ -->
-<?php $skifftech_current_job = $mo['jobs'][0]; ?>
+<!-- ============ EXPERIENCE (Skiff roles only, featured) ============ -->
 <section class="pf-section">
   <div class="pf-wrap">
     <div class="pf-eyebrow reveal">Experience</div>
-    <div class="pf-job reveal">
-      <div class="yr"><?php echo esc_html( $skifftech_current_job[0] ); ?></div>
-      <h3><?php echo $skifftech_current_job[1]; // phpcs:ignore -- static, escaped HTML entities ?></h3>
-      <p><?php echo esc_html( $skifftech_current_job[2] ); ?></p>
-    </div>
+    <?php foreach ( array_slice( $mo['jobs'], 0, $mo['jobs_shown'] ?? 1 ) as $skifftech_job ) : ?>
+      <div class="pf-job reveal">
+        <div class="yr"><?php echo esc_html( $skifftech_job[0] ); ?></div>
+        <h3><?php echo $skifftech_job[1]; // phpcs:ignore -- static, escaped HTML entities ?></h3>
+        <p><?php echo esc_html( $skifftech_job[2] ); ?></p>
+      </div>
+    <?php endforeach; ?>
   </div>
 </section>
 <?php endif; ?>
