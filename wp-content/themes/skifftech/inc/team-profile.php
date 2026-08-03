@@ -30,6 +30,24 @@ function skifftech_get_team_departments() {
 }
 
 /**
+ * Leadership members — featured separately on the Team page, not part of the
+ * department roster grid (see template-parts/team/leadership.php), but still
+ * profiled through the same 'modal' structure.
+ *
+ * @return array
+ */
+function skifftech_get_leadership_members() {
+	static $leadership = null;
+
+	if ( null === $leadership ) {
+		require get_theme_file_path( 'template-parts/team/team-data.php' );
+		$leadership = $skifftech_leadership;
+	}
+
+	return $leadership;
+}
+
+/**
  * Find a team member by slug, with their department title merged in.
  *
  * @param string $slug Member slug (e.g. 'rayhan').
@@ -42,6 +60,13 @@ function skifftech_find_team_member( $slug ) {
 				$member['department'] = $dept['title'];
 				return $member;
 			}
+		}
+	}
+
+	foreach ( skifftech_get_leadership_members() as $member ) {
+		if ( $member['slug'] === $slug ) {
+			$member['department'] = 'Engineering Leadership';
+			return $member;
 		}
 	}
 
@@ -126,30 +151,33 @@ function skifftech_provision_team_profile_pages() {
 		return;
 	}
 
+	$all_members = skifftech_get_leadership_members();
 	foreach ( skifftech_get_team_departments() as $dept ) {
-		foreach ( $dept['members'] as $member ) {
-			if ( empty( $member['modal'] ) ) {
-				continue;
-			}
+		$all_members = array_merge( $all_members, $dept['members'] );
+	}
 
-			if ( skifftech_get_team_member_page( $member['slug'] ) ) {
-				continue;
-			}
+	foreach ( $all_members as $member ) {
+		if ( empty( $member['modal'] ) ) {
+			continue;
+		}
 
-			$page_id = wp_insert_post(
-				array(
-					'post_type'   => 'page',
-					'post_status' => 'publish',
-					'post_parent' => $team_page->ID,
-					'post_name'   => $member['slug'],
-					'post_title'  => $member['name'],
-				),
-				true
-			);
+		if ( skifftech_get_team_member_page( $member['slug'] ) ) {
+			continue;
+		}
 
-			if ( ! is_wp_error( $page_id ) ) {
-				update_post_meta( $page_id, '_wp_page_template', 'template-pages/team-profile.php' );
-			}
+		$page_id = wp_insert_post(
+			array(
+				'post_type'   => 'page',
+				'post_status' => 'publish',
+				'post_parent' => $team_page->ID,
+				'post_name'   => $member['slug'],
+				'post_title'  => $member['name'],
+			),
+			true
+		);
+
+		if ( ! is_wp_error( $page_id ) ) {
+			update_post_meta( $page_id, '_wp_page_template', 'template-pages/team-profile.php' );
 		}
 	}
 }

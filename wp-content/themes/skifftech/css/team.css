@@ -291,6 +291,29 @@
   margin: 10px 0 0;
 }
 
+#pg-team .tm-feature .more {
+  margin-top: 24px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  color: var(--gold-bright);
+  font-weight: 500;
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0;
+}
+
+#pg-team .tm-feature .more .ar {
+  transition: transform 0.2s;
+}
+
+#pg-team .tm-feature .more:hover .ar {
+  transform: translateX(3px);
+}
+
 /* ---------- department blocks ---------- */
 #pg-team .tm-dept {
   margin-bottom: clamp(56px, 7vw, 80px);
