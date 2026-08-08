@@ -108,16 +108,17 @@ get_header();
 <?php endif; ?>
 
 <?php if ( ! empty( $mo['jobs'] ) ) : ?>
-<!-- ============ EXPERIENCE (current Skiff role only, featured) ============ -->
-<?php $skifftech_current_job = $mo['jobs'][0]; ?>
+<!-- ============ EXPERIENCE (Skiff roles only, featured) ============ -->
 <section class="pf-section">
   <div class="pf-wrap">
     <div class="pf-eyebrow reveal">Experience</div>
-    <div class="pf-job reveal">
-      <div class="yr"><?php echo esc_html( $skifftech_current_job[0] ); ?></div>
-      <h3><?php echo $skifftech_current_job[1]; // phpcs:ignore -- static, escaped HTML entities ?></h3>
-      <p><?php echo esc_html( $skifftech_current_job[2] ); ?></p>
-    </div>
+    <?php foreach ( array_slice( $mo['jobs'], 0, $mo['jobs_shown'] ?? 1 ) as $skifftech_job ) : ?>
+      <div class="pf-job reveal">
+        <div class="yr"><?php echo esc_html( $skifftech_job[0] ); ?></div>
+        <h3><?php echo $skifftech_job[1]; // phpcs:ignore -- static, escaped HTML entities ?></h3>
+        <p><?php echo esc_html( $skifftech_job[2] ); ?></p>
+      </div>
+    <?php endforeach; ?>
   </div>
 </section>
 <?php endif; ?>
@@ -209,7 +210,7 @@ get_header();
     <h2 class="pf-h2 reveal">What colleagues and clients say.</h2>
     <div class="pf-rec-list reveal">
       <?php foreach ( $mo['recommendations'] as $i => $rec ) : ?>
-        <div class="pf-rec-item reveal<?php echo $i >= 6 ? ' pf-rec-hidden' : ''; ?>">
+        <div class="pf-rec-item reveal<?php echo $i >= 3 ? ' pf-rec-hidden' : ''; ?>">
           <div class="pf-rec-head">
             <div class="nm"><?php echo esc_html( $rec['name'] ); ?></div>
             <div class="ti"><?php echo esc_html( $rec['title'] ); ?></div>
@@ -220,7 +221,7 @@ get_header();
         </div>
       <?php endforeach; ?>
     </div>
-    <?php if ( count( $mo['recommendations'] ) > 6 ) : ?>
+    <?php if ( count( $mo['recommendations'] ) > 3 ) : ?>
       <div class="pf-more-note reveal" style="margin-top:8px">
         <button class="btn btn-ghost" id="pfShowAllRecs">View all <?php echo (int) count( $mo['recommendations'] ); ?> recommendations <span class="arrow">&rarr;</span></button>
       </div>

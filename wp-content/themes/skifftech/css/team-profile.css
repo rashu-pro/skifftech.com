@@ -397,6 +397,10 @@
   background: linear-gradient(180deg, var(--gold), var(--gold-deep));
 }
 
+#pg-team-profile .pf-job + .pf-job {
+  margin-top: 16px;
+}
+
 #pg-team-profile .pf-job .yr {
   font-family: "JetBrains Mono", monospace;
   font-size: 11.5px;
