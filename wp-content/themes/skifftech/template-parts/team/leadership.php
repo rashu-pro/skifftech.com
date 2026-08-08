@@ -14,6 +14,11 @@
         <h3>Mohammad Istiaque Shawn</h3>
         <p>I help startups and businesses design, build, and scale software systems that are reliable, cost-efficient, and built for growth.</p>
         <p>As a CTO and Solutions Architect at SKIFF Technologies, I&rsquo;ve led the development of production-grade systems across SaaS platforms, data analytics, and cloud infrastructure. I specialize in transforming complex business requirements into scalable technical solutions that actually deliver results.</p>
+        <div class="pull">&ldquo;I don&rsquo;t just develop software &mdash; I design systems that support long-term business success.&rdquo;</div>
+        <?php $skifftech_shawn_url = skifftech_team_member_profile_url( 'shawn' ); ?>
+        <?php if ( $skifftech_shawn_url ) : ?>
+          <a class="more" href="<?php echo esc_url( $skifftech_shawn_url ); ?>">View profile <span class="ar">&rarr;</span></a>
+        <?php endif; ?>
         <div class="pull">&ldquo;I don&rsquo;t just develop software I design systems that support long-term business success.&rdquo;</div>
       </div>
     </div>

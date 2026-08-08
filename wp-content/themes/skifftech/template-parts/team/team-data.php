@@ -636,3 +636,35 @@ $skifftech_departments = array(
 		),
 	),
 );
+
+/**
+ * Leadership — featured separately on the Team page (template-parts/team/leadership.php),
+ * not part of the department roster grid, so kept out of $skifftech_departments.
+ * Still uses the same 'modal' structure so the shared profile page template,
+ * find_team_member(), and auto-provisioning all work unchanged.
+ */
+$skifftech_leadership = array(
+	array(
+		'slug'  => 'shawn',
+		'name'  => 'Mohammad Istiaque Shawn',
+		'role'  => 'Founder &amp; CTO',
+		'image' => 'mohammad-istiaque-shawn.jpeg',
+		'modal' => array(
+			'exp2' => '10+ years experience',
+			'bio'  => array(
+				'<b>I build software that businesses can actually rely on — and I&#x27;ve been doing it hands-on for nearly a decade.</b>',
+				'I&#x27;m the CTO of Skiff Technologies, where I lead engineering for clients ranging from US-based startups to established businesses building serious products. What sets my work apart is that I never stopped being an engineer. I still design the architecture, make the hard technical calls, and ship the systems — not just manage the people who do.',
+				'My path here was deliberate. After graduating in Computer Science from Chittagong University of Engineering and Technology, I spent years as a software and senior engineer before stepping into the CTO role. That progression means I lead from experience, not from a slide deck. I know what breaks in production, why projects overrun, and how to design systems that hold up when real users show up.',
+			),
+			'jobs' => array(
+				array( 'March 2021 — Present', 'Founder &amp; CTO · Skiff Technologies', 'Founded Skiff Technologies in March 2021 with a simple conviction: software should hold up under real users, not just impress in a demo. Leads engineering end-to-end across every client engagement — architecture, technical decisions, and delivery — while building Skiff into a team clients can rely on for the long run.' ),
+			),
+			'education' => array(
+				array( 'Bachelor of Science (B.Sc.), Computer Science', 'Chittagong University of Engineering &amp; Technology · 2011 – 2016' ),
+				array( 'Higher Secondary Certificate (HSC), Science', 'Chittagong College · 2008 – 2010' ),
+				array( 'Secondary School Certificate (SSC), Science', 'Nasirabad Govt. High School, Chattogram · 2002 – 2008' ),
+			),
+			'skills' => array( 'Engineering Leadership', 'Solution Architecture', 'Cloud &amp; DevOps', 'Data &amp; AI Systems', 'Business Development' ),
+		),
+	),
+);
