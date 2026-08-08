@@ -60,7 +60,7 @@
         <span class="hc br"></span>
         <div class="hero-imgph-inner">
           <div class="hp-lbl">
-            <img src="<?php echo get_template_directory_uri(); ?>/images/potrait-skiff-hero-image.png" alt="skiff technologies">
+            <img src="<?php echo get_template_directory_uri(); ?>/images/potrait-skiff-hero-image.jpg" alt="skiff technologies">
           </div>
         </div>
       </div>

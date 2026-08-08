@@ -19,6 +19,7 @@
         <?php if ( $skifftech_shawn_url ) : ?>
           <a class="more" href="<?php echo esc_url( $skifftech_shawn_url ); ?>">View profile <span class="ar">&rarr;</span></a>
         <?php endif; ?>
+        <div class="pull">&ldquo;I don&rsquo;t just develop software I design systems that support long-term business success.&rdquo;</div>
       </div>
     </div>
   </div>
