@@ -24,8 +24,9 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function skifftech_service_page_templates() {
 	return array(
-		'template-pages/dedicated-team.php'    => 'dedicated-development-team',
-		'template-pages/e2e-product-build.php' => 'end-to-end-product-build',
+		'template-pages/dedicated-team.php'      => 'dedicated-development-team',
+		'template-pages/e2e-product-build.php'   => 'end-to-end-product-build',
+		'template-pages/staff-augmentation.php'  => 'staff-augmentation',
 	);
 }
 

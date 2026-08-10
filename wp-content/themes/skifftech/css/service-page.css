@@ -638,6 +638,27 @@
   width: 42%;
 }
 
+/* Steeper taper for the vetting funnel (many in, a shortlist out). */
+.sa-page .sa-funnel.steep .rung:nth-child(2) {
+  width: 88%;
+}
+
+.sa-page .sa-funnel.steep .rung:nth-child(3) {
+  width: 74%;
+}
+
+.sa-page .sa-funnel.steep .rung:nth-child(4) {
+  width: 60%;
+}
+
+.sa-page .sa-funnel.steep .rung:nth-child(5) {
+  width: 46%;
+}
+
+.sa-page .sa-funnel.steep .rung:nth-child(6) {
+  width: 34%;
+}
+
 .sa-page .sa-funnel .rung .k {
   font-family: var(--sa-mono);
   font-size: 12px;

@@ -38,7 +38,7 @@
     <div class="sa-cmp-cta reveal">
       <a href="<?php echo esc_url( skifftech_service_page_url( 'template-pages/dedicated-team.php' ) ); ?>" class="sa-textlink">Want an ongoing team? See Dedicated Development Teams <span class="sa-ar">&rarr;</span></a>
       <span class="sa-cmp-sep" aria-hidden="true">&middot;</span>
-      <a href="<?php echo esc_url( home_url( '/staff-augmentation/' ) ); ?>" class="sa-textlink">Have engineers already? See Staff Augmentation <span class="sa-ar">&rarr;</span></a>
+      <a href="<?php echo esc_url( skifftech_service_page_url( 'template-pages/staff-augmentation.php' ) ); ?>" class="sa-textlink">Have engineers already? See Staff Augmentation <span class="sa-ar">&rarr;</span></a>
     </div>
   </div>
 </section>

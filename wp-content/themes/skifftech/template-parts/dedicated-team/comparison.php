@@ -38,7 +38,7 @@
     <div class="sa-cmp-cta reveal">
       <a href="<?php echo esc_url( skifftech_service_page_url( 'template-pages/e2e-product-build.php' ) ); ?>" class="sa-textlink">No in-house team at all? See End-to-End Product Build <span class="sa-ar">&rarr;</span></a>
       <span class="sa-cmp-sep" aria-hidden="true">&middot;</span>
-      <a href="<?php echo esc_url( home_url( '/staff-augmentation/' ) ); ?>" class="sa-textlink">Just need individual engineers? See Staff Augmentation <span class="sa-ar">&rarr;</span></a>
+      <a href="<?php echo esc_url( skifftech_service_page_url( 'template-pages/staff-augmentation.php' ) ); ?>" class="sa-textlink">Just need individual engineers? See Staff Augmentation <span class="sa-ar">&rarr;</span></a>
     </div>
   </div>
 </section>
