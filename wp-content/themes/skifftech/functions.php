@@ -266,6 +266,40 @@ function skifftech_scripts() {
 		);
 	}
 
+	// V6 service page styles + scripts (Dedicated Team, End-to-End Product Build, ...)
+	if ( skifftech_is_service_page() ) {
+		wp_enqueue_style(
+			'skifftech-service-page',
+			$theme_uri . '/css/service-page.css',
+			array( 'skifftech-header-skiff' ),
+			filemtime( $theme_dir . '/css/service-page.css' )
+		);
+		wp_enqueue_script(
+			'skifftech-service-page',
+			$theme_uri . '/js/service-page.js',
+			array(),
+			filemtime( $theme_dir . '/js/service-page.js' ),
+			true
+		);
+	}
+
+	// V6 about page styles + scripts (only on About Us template)
+	if ( is_page_template( 'template-pages/about.php' ) ) {
+		wp_enqueue_style(
+			'skifftech-about',
+			$theme_uri . '/css/about.css',
+			array( 'skifftech-header-skiff' ),
+			filemtime( $theme_dir . '/css/about.css' )
+		);
+		wp_enqueue_script(
+			'skifftech-about',
+			$theme_uri . '/js/about.js',
+			array(),
+			filemtime( $theme_dir . '/js/about.js' ),
+			true
+		);
+	}
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -296,6 +330,11 @@ require get_template_directory() . '/inc/shortcode.php';
  * Team member profile pages — data helpers + auto-provisioning.
  */
 require get_template_directory() . '/inc/team-profile.php';
+
+/**
+ * V6 service pages — shared template registry + cross-link helpers.
+ */
+require get_template_directory() . '/inc/service-pages.php';
 
 /**
  * Customizer additions.
