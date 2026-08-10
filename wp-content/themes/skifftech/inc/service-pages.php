@@ -1,11 +1,12 @@
 <?php
 /**
- * Service page helpers.
+ * Service page registry + template-based page link helpers.
  *
  * The V6 service pages (Dedicated Development Team, End-to-End Product Build,
- * and future siblings) cross-link to each other. Slugs are chosen by whoever
- * creates the page in WP Admin, so links are resolved by page template instead
- * of being hardcoded.
+ * Staff Augmentation) share one stylesheet and cross-link to each other, and
+ * other V6 pages link across to them. Slugs are chosen by whoever creates the
+ * page in WP Admin, so links are resolved by page template rather than being
+ * hardcoded.
  *
  * @package skifftech
  */
@@ -42,7 +43,7 @@ function skifftech_is_service_page() {
 /**
  * Permalink of the page assigned a given service page template.
  *
- * Falls back to the template's default slug when no page uses the template,
+ * Falls back to the template's registered slug when no page uses the template,
  * so links still point somewhere sensible on a fresh install.
  *
  * @param string $template Template file, e.g. 'template-pages/dedicated-team.php'.
@@ -52,7 +53,21 @@ function skifftech_service_page_url( $template ) {
 	$templates = skifftech_service_page_templates();
 	$fallback  = isset( $templates[ $template ] ) ? $templates[ $template ] : '';
 
-	$cache_key = 'skifftech_service_page_url_' . md5( $template );
+	return skifftech_page_url_by_template( $template, $fallback );
+}
+
+/**
+ * Permalink of the published page assigned a given page template.
+ *
+ * Lets templates cross-link without hardcoding slugs, which are chosen by
+ * whoever creates the page in WP Admin.
+ *
+ * @param string $template      Template file, e.g. 'template-pages/team.php'.
+ * @param string $fallback_slug Slug used when no page has the template assigned.
+ * @return string Escaped-ready URL.
+ */
+function skifftech_page_url_by_template( $template, $fallback_slug = '' ) {
+	$cache_key = 'skifftech_page_url_' . md5( $template );
 	$cached    = wp_cache_get( $cache_key, 'skifftech' );
 
 	if ( false !== $cached ) {
@@ -71,7 +86,7 @@ function skifftech_service_page_url( $template ) {
 		)
 	);
 
-	$url = $pages ? get_permalink( $pages[0] ) : home_url( '/' . $fallback . '/' );
+	$url = $pages ? get_permalink( $pages[0] ) : home_url( '/' . $fallback_slug . '/' );
 
 	wp_cache_set( $cache_key, $url, 'skifftech' );
 
