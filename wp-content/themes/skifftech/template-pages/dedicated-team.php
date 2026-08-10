@@ -12,7 +12,7 @@
 get_header();
 ?>
 
-<main id="pg-dedicated-team">
+<main id="pg-dedicated-team" class="sa-page">
   <?php get_template_part( 'template-parts/dedicated-team/hero' ); ?>
   <?php get_template_part( 'template-parts/dedicated-team/positioning' ); ?>
   <?php get_template_part( 'template-parts/dedicated-team/outcomes' ); ?>

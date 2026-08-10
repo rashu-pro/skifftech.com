@@ -1,7 +1,9 @@
 (function () {
   'use strict';
 
-  var root = document.getElementById('pg-dedicated-team');
+  /* Shared behaviour for every V6 service page (<main class="sa-page">):
+     Dedicated Development Team, End-to-End Product Build, and siblings. */
+  var root = document.querySelector('.sa-page');
   if (!root) {
     return;
   }
