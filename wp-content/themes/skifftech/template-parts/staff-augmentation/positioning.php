@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Staff Augmentation — About staff augmentation (positioning).
  *
@@ -37,6 +38,6 @@
       </div>
     </div>
 
-    <p class="sa-callout reveal">You get the engineer. We handle everything it took to find them.</p>
+
   </div>
 </section>
