@@ -1,6 +1,6 @@
 <?php
 /**
- * Dedicated Development Team — Why a dedicated team (positioning).
+ * Dedicated Development Team — About dedicated development teams (positioning).
  *
  * @package skifftech
  */
@@ -9,9 +9,9 @@
 <section class="sa-section" id="why">
   <div class="sa-wrap">
     <div class="sa-head reveal">
-      <span class="eyebrow">Why a dedicated team</span>
+      <span class="eyebrow">About dedicated development teams</span>
       <h2 class="sa-h2">All the capability of an in-house team. None of the building it.</h2>
-      <p class="sa-lead">Hiring a full product team takes the better part of a year. Managing a crowd of freelancers becomes a second job. A dedicated team gives you the whole unit &mdash; already assembled, already managed.</p>
+      <p class="sa-lead">A dedicated development team is a complete unit &mdash; engineers, a PM, and QA &mdash; assembled around your roadmap and managed day-to-day, so you get the output of a full team without spending the better part of a year hiring one.</p>
     </div>
 
     <div class="sa-pos-grid reveal">

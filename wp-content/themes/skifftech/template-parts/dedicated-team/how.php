@@ -1,6 +1,6 @@
 <?php
 /**
- * Dedicated Development Team — How it works (timeline).
+ * Dedicated Development Team — Process (timeline).
  *
  * @package skifftech
  */
@@ -9,7 +9,7 @@
 <section class="sa-section" id="how">
   <div class="sa-wrap">
     <div class="sa-head reveal">
-      <span class="eyebrow">How it works</span>
+      <span class="eyebrow">Process</span>
       <h2 class="sa-h2">From roadmap to a sprinting team in weeks.</h2>
       <p class="sa-lead">A clear path from your first conversation to a team shipping on your product &mdash; and you approve every person on it.</p>
     </div>
