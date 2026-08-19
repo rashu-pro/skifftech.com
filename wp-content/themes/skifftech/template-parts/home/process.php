@@ -66,9 +66,8 @@
                                         ?>" alt="How we deliver"> -->
         <img class="proc-img" src="<?php echo esc_url(get_template_directory_uri() . '/images/team/cto.min.jpeg'); ?>" alt="Mohammad Istiaque Shawn, CTO &amp; Founder">
         <figcaption class="proc-quote">
-          <p class="qt">&ldquo;You&rsquo;ll work with engineers, not account managers. I stay personally involved in every build.&rdquo;</p>
-          <p class="at">&mdash; <span class="qnm">Mohammad Istiaque Shawn</span></p>
-          <p class="qrl">CTO &amp; Founder</p>
+          <p class="qt">You&rsquo;ll work with engineers, not account managers. I stay personally involved in every build.</p>
+          <p class="at"><span class="qnm"> Mohammad Istiaque Shawn</span>, CTO &amp; Founder</p>
         </figcaption>
       </figure>
 
