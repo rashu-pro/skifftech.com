@@ -1388,22 +1388,19 @@
 
 #pg-home .proc-media {
   position: relative;
-  display: flex;
-  flex-direction: column;
+  display: block;
   margin: 0;
   border-radius: calc(var(--r) + 8px);
   overflow: hidden;
   background: linear-gradient(135deg, var(--night-3), #1a1712);
   border: 1px solid var(--line-d);
-  min-height: 480px;
 }
 
 /* Aspect-ratio drives the height, not the source file's 3:4 portrait —
    otherwise the card grows to the image's natural height and dwarfs the left column. */
 #pg-home .proc-media .proc-img {
-  flex: 1 0 auto;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 8 / 9;
   object-fit: cover;
   object-position: 50% 0%; /* anchor top — overflow is cropped from the bottom only */
   display: block;
@@ -1433,13 +1430,19 @@
   background: rgba(16, 15, 13, 0.45);
 }
 
-/* Quote panel — flush to the bottom of the image, part of the same card.
-   No side borders / radius / shadow, so it reads as attached, not a separate box. */
+/* Quote scrim — overlaid on the bottom of the photo, fading up into it. */
 #pg-home .proc-quote {
-  flex: none;
-  padding: 20px 24px 22px;
-  background: var(--night-2);
-  border-top: 1px solid var(--line-d);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 56px 26px 22px;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 9, 8, 0) 0%,
+    rgba(10, 9, 8, 0.74) 30%,
+    rgba(10, 9, 8, 0.93) 100%
+  );
 }
 
 #pg-home .proc-quote .qt {
@@ -1452,9 +1455,9 @@
 }
 
 #pg-home .proc-quote .at {
-  margin: 12px 0 0;
+  margin: 10px 0 0;
   font-size: 13.5px;
-  color: var(--gold);
+  color: var(--tl-mut);
 }
 
 #pg-home .proc-quote .at .qnm {
@@ -1463,12 +1466,6 @@
   font-size: 15px;
   letter-spacing: -0.01em;
   color: var(--gold);
-}
-
-#pg-home .proc-quote .qrl {
-  margin: 2px 0 0;
-  font-size: 13.5px;
-  color: var(--tl-mut);
 }
 
 /* =====================================================
@@ -1703,7 +1700,6 @@
     gap: 44px;
   }
   #pg-home .proc-media {
-    min-height: 480px;
     order: -1;
   }
   #pg-home .cs-card {
