@@ -300,6 +300,23 @@ function skifftech_scripts() {
 		);
 	}
 
+	// V6 staff augmentation page styles + scripts (only on that template)
+	if ( is_page_template( 'template-pages/staff-augmentation.php' ) ) {
+		wp_enqueue_style(
+			'skifftech-staff-augmentation',
+			$theme_uri . '/css/staff-augmentation.css',
+			array( 'skifftech-header-skiff' ),
+			filemtime( $theme_dir . '/css/staff-augmentation.css' )
+		);
+		wp_enqueue_script(
+			'skifftech-staff-augmentation',
+			$theme_uri . '/js/staff-augmentation.js',
+			array(),
+			filemtime( $theme_dir . '/js/staff-augmentation.js' ),
+			true
+		);
+	}
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}

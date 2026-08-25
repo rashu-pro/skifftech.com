@@ -1,0 +1,834 @@
+/* =====================================================
+   staff-augmentation.css — V6 Staff Augmentation Page
+   Enqueued only on the Staff Augmentation template.
+   Bootstrap conflict note:
+     .btn, .btn-primary and .badge exist in Bootstrap; all
+     rules here are scoped under #pg-staff-augmentation so
+     they override safely.
+   ===================================================== */
+
+/* ----- Base / shared (mirrors home.css / dedicated-team.css / e2e-product-build.css) ----- */
+#pg-staff-augmentation {
+  /* page-local design tokens (.sa-* namespace) */
+  --sa-bg: var(--night);
+  --sa-bg-raise: #141310;
+  --sa-card: var(--night-2);
+  --sa-card-2: #241f17;
+  --sa-line: var(--line-d);
+  --sa-line-2: rgba(255, 255, 255, 0.16);
+  --sa-gold: var(--gold);
+  --sa-gold-2: var(--gold-bright);
+  --sa-gold-dim: rgba(236, 187, 55, 0.12);
+  --sa-gold-line: rgba(236, 187, 55, 0.38);
+  --sa-ink: var(--tl);
+  --sa-muted: var(--tl-mut);
+  --sa-dim: #7a7466;
+  --sa-r: var(--r);
+  --sa-mono: "JetBrains Mono", ui-monospace, monospace;
+  --sa-display: "Bricolage Grotesque", system-ui, sans-serif;
+
+  background: var(--night);
+  color: var(--tl);
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+#pg-staff-augmentation h1,
+#pg-staff-augmentation h2,
+#pg-staff-augmentation h3,
+#pg-staff-augmentation h4 {
+  font-family: "Bricolage Grotesque", "Inter", sans-serif;
+  line-height: 1.06;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+#pg-staff-augmentation p {
+  margin: 0;
+}
+
+#pg-staff-augmentation a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#pg-staff-augmentation .gold-txt {
+  background: linear-gradient(100deg, var(--gold), var(--ember));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+#pg-staff-augmentation .eyebrow {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+#pg-staff-augmentation .eyebrow::before {
+  content: "";
+  width: 26px;
+  height: 1px;
+  background: var(--gold);
+  display: inline-block;
+}
+
+#pg-staff-augmentation .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 14px 24px;
+  border-radius: 999px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition:
+    transform 0.25s var(--ease),
+    background 0.25s,
+    box-shadow 0.25s,
+    border-color 0.25s;
+  font-family: "Inter", sans-serif;
+  text-decoration: none;
+  line-height: 1;
+}
+
+#pg-staff-augmentation .btn-primary {
+  background: var(--gold);
+  color: #1a1408;
+  box-shadow: 0 10px 30px -12px rgba(236, 187, 55, 0.7);
+}
+
+#pg-staff-augmentation .btn-primary:hover {
+  transform: translateY(-2px);
+  background: var(--gold-bright);
+  box-shadow: 0 16px 38px -12px rgba(236, 187, 55, 0.85);
+  color: #1a1408;
+}
+
+#pg-staff-augmentation .btn-ghost {
+  background: transparent;
+  color: var(--tl);
+  border-color: var(--line-d);
+}
+
+#pg-staff-augmentation .btn-ghost:hover {
+  border-color: var(--gold);
+  color: var(--gold-bright);
+  transform: translateY(-2px);
+}
+
+#pg-staff-augmentation .arrow {
+  font-size: 13px;
+  transition: transform 0.25s var(--ease);
+}
+
+#pg-staff-augmentation .btn:hover .arrow {
+  transform: translateX(3px);
+}
+
+#pg-staff-augmentation .reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 0.7s var(--ease),
+    transform 0.7s var(--ease);
+}
+
+#pg-staff-augmentation .reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+/* =====================================================
+   Layout primitives
+   ===================================================== */
+
+#pg-staff-augmentation .sa-wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding-inline: clamp(20px, 5vw, 40px);
+}
+
+#pg-staff-augmentation .sa-section {
+  padding-block: clamp(72px, 10vw, 128px);
+  position: relative;
+}
+
+#pg-staff-augmentation .sa-h2 {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+}
+
+#pg-staff-augmentation .sa-lead {
+  color: var(--sa-muted);
+  font-size: clamp(16px, 1.6vw, 19px);
+  max-width: 60ch;
+  line-height: 1.65;
+}
+
+#pg-staff-augmentation .sa-head {
+  max-width: 720px;
+  margin-bottom: clamp(40px, 6vw, 64px);
+}
+
+#pg-staff-augmentation .sa-head .eyebrow {
+  margin-bottom: 20px;
+}
+
+#pg-staff-augmentation .sa-head h2 {
+  margin-bottom: 16px;
+}
+
+#pg-staff-augmentation .sa-head-center {
+  text-align: center;
+  margin-inline: auto;
+}
+
+#pg-staff-augmentation .sa-head-center .eyebrow {
+  justify-content: center;
+}
+
+/* ----- breadcrumb ----- */
+#pg-staff-augmentation .sa-crumb {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--sa-mono);
+  font-size: 12px;
+  color: var(--sa-muted);
+  margin-bottom: 26px;
+  flex-wrap: wrap;
+}
+
+#pg-staff-augmentation .sa-crumb a {
+  color: var(--sa-muted);
+  transition: 0.2s;
+}
+
+#pg-staff-augmentation .sa-crumb a:hover {
+  color: var(--sa-gold-2);
+}
+
+#pg-staff-augmentation .sa-crumb .sep {
+  opacity: 0.5;
+}
+
+#pg-staff-augmentation .sa-crumb .cur {
+  color: var(--sa-gold);
+}
+
+/* =====================================================
+   1. Hero
+   ===================================================== */
+
+#pg-staff-augmentation .sa-hero {
+  padding-top: 150px;
+  padding-bottom: 0;
+  position: relative;
+}
+
+#pg-staff-augmentation .sa-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 56px;
+  align-items: center;
+}
+
+#pg-staff-augmentation .sa-hero h1 {
+  font-size: clamp(38px, 5.6vw, 66px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  margin-bottom: 24px;
+}
+
+#pg-staff-augmentation .sa-hero .sa-lead {
+  font-size: clamp(17px, 1.7vw, 20px);
+  margin-bottom: 34px;
+}
+
+#pg-staff-augmentation .sa-hero-cta {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+#pg-staff-augmentation .sa-hero-visual {
+  position: relative;
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#pg-staff-augmentation .sa-graph {
+  width: 100%;
+  height: auto;
+  max-width: 440px;
+}
+
+#pg-staff-augmentation .sa-node circle {
+  transition: r 0.3s;
+  animation: sapulse 3.4s ease-in-out infinite;
+}
+
+#pg-staff-augmentation .sa-node circle:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+#pg-staff-augmentation .sa-node circle:nth-child(3) {
+  animation-delay: 1s;
+}
+
+#pg-staff-augmentation .sa-node circle:nth-child(4) {
+  animation-delay: 1.5s;
+}
+
+#pg-staff-augmentation .sa-node circle:nth-child(5) {
+  animation-delay: 2s;
+}
+
+@keyframes sapulse {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+/* ----- proof strip ----- */
+#pg-staff-augmentation .sa-proof {
+  margin-top: clamp(56px, 7vw, 88px);
+  border-top: 1px solid var(--sa-line);
+  border-bottom: 1px solid var(--sa-line);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+#pg-staff-augmentation .sa-proof .sa-metric {
+  padding: 30px 26px;
+  border-right: 1px solid var(--sa-line);
+}
+
+#pg-staff-augmentation .sa-proof .sa-metric:last-child {
+  border-right: 0;
+}
+
+#pg-staff-augmentation .sa-metric .num {
+  font-family: var(--sa-display);
+  font-size: clamp(26px, 3vw, 36px);
+  font-weight: 700;
+  color: var(--sa-ink);
+  letter-spacing: -0.02em;
+}
+
+#pg-staff-augmentation .sa-metric .num b {
+  color: var(--sa-gold-2);
+  font-weight: 700;
+}
+
+#pg-staff-augmentation .sa-metric .lbl {
+  font-family: var(--sa-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sa-dim);
+  margin-top: 8px;
+}
+
+/* =====================================================
+   2. Positioning
+   ===================================================== */
+
+#pg-staff-augmentation .sa-pos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+#pg-staff-augmentation .sa-pos-card {
+  background: var(--sa-card);
+  border: 1px solid var(--sa-line);
+  border-radius: var(--sa-r);
+  padding: 32px 28px;
+  position: relative;
+}
+
+#pg-staff-augmentation .sa-pos-card.hi {
+  border-color: var(--sa-gold-line);
+  background:
+    linear-gradient(180deg, var(--sa-gold-dim), transparent 60%),
+    var(--sa-card);
+}
+
+#pg-staff-augmentation .sa-pos-card .tag {
+  font-family: var(--sa-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sa-dim);
+  margin-bottom: 16px;
+}
+
+#pg-staff-augmentation .sa-pos-card.hi .tag {
+  color: var(--sa-gold);
+}
+
+#pg-staff-augmentation .sa-pos-card h3 {
+  font-size: 21px;
+  margin-bottom: 12px;
+}
+
+#pg-staff-augmentation .sa-pos-card p {
+  color: var(--sa-muted);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+#pg-staff-augmentation .sa-pos-card .cost {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--sa-line);
+  font-size: 13.5px;
+  color: var(--sa-dim);
+}
+
+#pg-staff-augmentation .sa-pos-card.hi .cost {
+  color: var(--sa-muted);
+}
+
+#pg-staff-augmentation .sa-callout {
+  text-align: center;
+  font-family: var(--sa-display);
+  font-weight: 700;
+  font-size: 19px;
+  margin-top: 32px;
+}
+
+/* =====================================================
+   3. Benefits (outcomes grid)
+   ===================================================== */
+
+#pg-staff-augmentation .sa-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+#pg-staff-augmentation .sa-oc {
+  background: var(--sa-card);
+  border: 1px solid var(--sa-line);
+  border-radius: var(--sa-r);
+  padding: 30px 26px;
+  transition: 0.25s var(--ease);
+}
+
+#pg-staff-augmentation .sa-oc:hover {
+  border-color: rgba(236, 187, 55, 0.45);
+  transform: translateY(-3px);
+}
+
+#pg-staff-augmentation .sa-oc .ic {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: var(--sa-gold-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#pg-staff-augmentation .sa-oc .ic svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--sa-gold-2);
+  fill: none;
+  stroke-width: 1.6;
+}
+
+#pg-staff-augmentation .sa-oc h3 {
+  font-size: 18px;
+  margin-bottom: 9px;
+}
+
+#pg-staff-augmentation .sa-oc p {
+  color: var(--sa-muted);
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+/* =====================================================
+   4. Why Skiff (quick-glance matrix)
+   ===================================================== */
+
+#pg-staff-augmentation .sa-quickcmp {
+  border: 1px solid var(--sa-line);
+  border-radius: var(--sa-r);
+  overflow: hidden;
+  background: var(--sa-card);
+  margin-bottom: 28px;
+}
+
+#pg-staff-augmentation .sa-qc-row {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  align-items: center;
+  border-bottom: 1px solid var(--sa-line);
+}
+
+#pg-staff-augmentation .sa-qc-row:last-child {
+  border-bottom: 0;
+}
+
+#pg-staff-augmentation .sa-qc-row.head {
+  background: var(--sa-bg-raise);
+}
+
+#pg-staff-augmentation .sa-qc-cell {
+  padding: 14px 16px;
+  font-size: 13.5px;
+  text-align: center;
+}
+
+#pg-staff-augmentation .sa-qc-row .sa-qc-cell:first-child {
+  text-align: left;
+  color: var(--sa-muted);
+  font-weight: 500;
+}
+
+#pg-staff-augmentation .sa-qc-row.head .sa-qc-cell {
+  font-family: var(--sa-display);
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--sa-ink);
+}
+
+#pg-staff-augmentation .sa-qc-row.head .sa-qc-cell.hi {
+  color: var(--sa-gold-2);
+}
+
+#pg-staff-augmentation .sa-qc-cell.hi-col {
+  background: var(--sa-gold-dim);
+}
+
+#pg-staff-augmentation .sa-qc-check {
+  display: inline-flex;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+#pg-staff-augmentation .sa-qc-check.yes {
+  background: var(--sa-gold-dim);
+}
+
+#pg-staff-augmentation .sa-qc-check.yes svg {
+  width: 11px;
+  height: 11px;
+  stroke: var(--sa-gold-2);
+  fill: none;
+  stroke-width: 2.6;
+}
+
+/* =====================================================
+   5. Process (timeline)
+   ===================================================== */
+
+#pg-staff-augmentation .sa-timeline {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  position: relative;
+  margin-top: 20px;
+}
+
+#pg-staff-augmentation .sa-timeline::before {
+  content: "";
+  position: absolute;
+  top: 19px;
+  left: 8%;
+  right: 8%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--sa-gold-line),
+    transparent
+  );
+}
+
+#pg-staff-augmentation .sa-step {
+  padding: 0 16px;
+  position: relative;
+  text-align: left;
+}
+
+#pg-staff-augmentation .sa-step .node {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--sa-bg);
+  border: 1px solid var(--sa-gold-line);
+  color: var(--sa-gold-2);
+  font-family: var(--sa-mono);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+  position: relative;
+  z-index: 2;
+}
+
+#pg-staff-augmentation .sa-step h3 {
+  font-size: 16.5px;
+  margin-bottom: 8px;
+}
+
+#pg-staff-augmentation .sa-step p {
+  color: var(--sa-muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+#pg-staff-augmentation .sa-timeline-cta {
+  margin-top: 56px;
+  text-align: center;
+}
+
+/* =====================================================
+   6. FAQ
+   ===================================================== */
+
+#pg-staff-augmentation .sa-faq {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+#pg-staff-augmentation .sa-faq-item {
+  border-bottom: 1px solid var(--sa-line);
+}
+
+#pg-staff-augmentation .sa-faq-q {
+  width: 100%;
+  background: none;
+  border: 0;
+  color: var(--sa-ink);
+  font-family: var(--sa-display);
+  font-size: 18px;
+  font-weight: 600;
+  text-align: left;
+  padding: 24px 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+#pg-staff-augmentation .sa-faq-q .pm {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  transition: transform 0.3s;
+}
+
+#pg-staff-augmentation .sa-faq-q .pm::before,
+#pg-staff-augmentation .sa-faq-q .pm::after {
+  content: "";
+  position: absolute;
+  background: var(--sa-gold-2);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#pg-staff-augmentation .sa-faq-q .pm::before {
+  width: 14px;
+  height: 1.5px;
+}
+
+#pg-staff-augmentation .sa-faq-q .pm::after {
+  width: 1.5px;
+  height: 14px;
+  transition: transform 0.3s;
+}
+
+#pg-staff-augmentation .sa-faq-item.open .pm::after {
+  transform: translate(-50%, -50%) scaleY(0);
+}
+
+#pg-staff-augmentation .sa-faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.34s var(--ease);
+}
+
+#pg-staff-augmentation .sa-faq-a p {
+  color: var(--sa-muted);
+  font-size: 15px;
+  line-height: 1.65;
+  padding-bottom: 24px;
+  max-width: 70ch;
+}
+
+/* =====================================================
+   7. Final CTA
+   ===================================================== */
+
+#pg-staff-augmentation .sa-final {
+  position: relative;
+  overflow: hidden;
+}
+
+#pg-staff-augmentation .sa-final-inner {
+  background: linear-gradient(135deg, #1b1813, var(--night-3));
+  border: 1px solid var(--sa-gold-line);
+  border-radius: 22px;
+  padding: clamp(48px, 7vw, 84px);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+#pg-staff-augmentation .sa-final h2 {
+  font-size: clamp(32px, 4.6vw, 52px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 18px;
+}
+
+#pg-staff-augmentation .sa-final .sa-lead {
+  margin: 0 auto 34px;
+}
+
+#pg-staff-augmentation .sa-final-cta {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+}
+
+#pg-staff-augmentation .sa-final .glow {
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--sa-gold-dim), transparent 65%);
+  top: -40%;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+/* =====================================================
+   Responsive
+   ===================================================== */
+
+@media (max-width: 960px) {
+  #pg-staff-augmentation .sa-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  #pg-staff-augmentation .sa-hero-visual {
+    min-height: 280px;
+    order: 2;
+  }
+
+  #pg-staff-augmentation .sa-timeline {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  #pg-staff-augmentation .sa-timeline::before {
+    display: none;
+  }
+
+  #pg-staff-augmentation .sa-step {
+    padding: 0 0 28px;
+    border-left: 1px solid var(--sa-gold-line);
+    margin-left: 19px;
+    padding-left: 34px;
+  }
+
+  #pg-staff-augmentation .sa-step .node {
+    position: absolute;
+    left: -20px;
+    margin-bottom: 0;
+  }
+
+  #pg-staff-augmentation .sa-step h3 {
+    margin-top: 2px;
+  }
+}
+
+@media (max-width: 720px) {
+  #pg-staff-augmentation .sa-proof {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #pg-staff-augmentation .sa-proof .sa-metric:nth-child(2) {
+    border-right: 0;
+  }
+
+  #pg-staff-augmentation .sa-proof .sa-metric:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--sa-line);
+  }
+
+  #pg-staff-augmentation .sa-pos-grid,
+  #pg-staff-augmentation .sa-grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  #pg-staff-augmentation .sa-qc-cell {
+    padding: 12px 8px;
+    font-size: 12px;
+  }
+
+  #pg-staff-augmentation .sa-qc-row.head .sa-qc-cell {
+    font-size: 12px;
+  }
+
+  #pg-staff-augmentation .sa-hero-cta .btn,
+  #pg-staff-augmentation .sa-final-cta .btn {
+    flex: 1;
+    justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #pg-staff-augmentation .sa-node circle {
+    animation: none;
+  }
+
+  #pg-staff-augmentation .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
