@@ -283,6 +283,23 @@ function skifftech_scripts() {
 		);
 	}
 
+	// V6 end-to-end product build page styles + scripts (only on that template)
+	if ( is_page_template( 'template-pages/e2e-product-build.php' ) ) {
+		wp_enqueue_style(
+			'skifftech-e2e-product-build',
+			$theme_uri . '/css/e2e-product-build.css',
+			array( 'skifftech-header-skiff' ),
+			filemtime( $theme_dir . '/css/e2e-product-build.css' )
+		);
+		wp_enqueue_script(
+			'skifftech-e2e-product-build',
+			$theme_uri . '/js/e2e-product-build.js',
+			array(),
+			filemtime( $theme_dir . '/js/e2e-product-build.js' ),
+			true
+		);
+	}
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
