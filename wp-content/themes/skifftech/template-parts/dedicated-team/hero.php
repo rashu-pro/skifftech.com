@@ -14,7 +14,6 @@
           <a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a><span class="sep">/</span><a href="<?php echo esc_url( home_url( '/#models' ) ); ?>">Ways to Work With Us</a><span class="sep">/</span><span class="cur">Dedicated Development Team</span>
         </nav>
 
-        <span class="eyebrow">Dedicated Development Team</span>
         <h1>Your Development Team, <span class="gold-txt">Without the Hiring Headache.</span></h1>
         <p class="sa-lead">You bring the roadmap; we bring the whole team behind it. Engineers, a project manager, and QA &mdash; hand-picked for your product, working only on your product, with delivery managed for you. You set the direction; we make it ship.</p>
 

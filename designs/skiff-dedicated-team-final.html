@@ -688,6 +688,24 @@
     .sa-logo-row{grid-template-columns:repeat(2,1fr)}
   }
 
+  /* ---------- quick-glance checkmark matrix ---------- */
+  .sa-quickcmp{border:1px solid var(--sa-line);border-radius:var(--sa-r);overflow:hidden;background:var(--sa-card);margin-bottom:28px}
+  .sa-qc-row{display:grid;grid-template-columns:1.6fr 1fr;align-items:center;border-bottom:1px solid var(--sa-line)}
+  .sa-qc-row:last-child{border-bottom:0}
+  .sa-qc-row.head{background:var(--sa-bg-raise)}
+  .sa-qc-cell{padding:14px 16px;font-size:13.5px;text-align:center}
+  .sa-qc-row .sa-qc-cell:first-child{text-align:left;color:var(--sa-muted);font-weight:500}
+  .sa-qc-row.head .sa-qc-cell{font-family:var(--sa-display);font-weight:700;font-size:14px;color:var(--sa-ink)}
+  .sa-qc-row.head .sa-qc-cell.hi{color:var(--sa-gold-2)}
+  .sa-qc-cell.hi-col{background:var(--sa-gold-dim)}
+  .sa-qc-check{display:inline-flex;width:20px;height:20px;border-radius:50%;align-items:center;justify-content:center}
+  .sa-qc-check.yes{background:var(--sa-gold-dim)}
+  .sa-qc-check.yes svg{width:11px;height:11px;stroke:var(--sa-gold-2);fill:none;stroke-width:2.6}
+  .sa-qc-check.no{color:var(--sa-dim);font-size:13px}
+  @media(max-width:720px){
+    .sa-qc-cell{padding:12px 8px;font-size:12px}
+    .sa-qc-row.head .sa-qc-cell{font-size:12px}
+  }
 </style>
 </head>
 
@@ -753,7 +771,6 @@
     <div class="sa-hero-grid">
       <div class="reveal">
         <nav class="sa-crumb" aria-label="Breadcrumb"><a href="skiff-homepage-v6.html">Home</a><span class="sep">/</span><a href="skiff-homepage-v6.html#models">Ways to Work With Us</a><span class="sep">/</span><span class="cur">Dedicated Development Team</span></nav>
-        <span class="eyebrow">Dedicated Development Team</span>
         <h1>Your Development Team, <span class="gold-txt">Without the Hiring Headache.</span></h1>
         <p class="sa-lead">You bring the roadmap; we bring the whole team behind it. Engineers, a project manager, and QA — hand-picked for your product, working only on your product, with delivery managed for you. You set the direction; we make it ship.</p>
         <div class="sa-hero-cta">
@@ -817,13 +834,13 @@
   </div>
 </section>
 
-<!-- ============ 2. POSITIONING ============ -->
+<!-- ============ 2. ABOUT DEDICATED TEAM ============ -->
 <section class="sa-section" id="why">
   <div class="sa-wrap">
     <div class="sa-head reveal">
-      <span class="eyebrow">Why a dedicated team</span>
+      <span class="eyebrow">About dedicated development teams</span>
       <h2 class="sa-h2">All the capability of an in-house team. None of the building it.</h2>
-      <p class="sa-lead">Hiring a full product team takes the better part of a year. Managing a crowd of freelancers becomes a second job. A dedicated team gives you the whole unit — already assembled, already managed.</p>
+      <p class="sa-lead">A dedicated development team is a complete unit — engineers, a PM, and QA — assembled around your roadmap and managed day-to-day, so you get the output of a full team without spending the better part of a year hiring one.</p>
     </div>
     <div class="sa-pos-grid reveal">
       <div class="sa-pos-card">
@@ -848,54 +865,95 @@
   </div>
 </section>
 
-<!-- ============ 3. OUTCOMES ============ -->
-<section class="sa-section" style="background:var(--sa-bg-raise);border-block:1px solid var(--sa-line)">
+<!-- ============ 3. BENEFITS ============ -->
+<section class="sa-section">
   <div class="sa-wrap">
     <div class="sa-head reveal">
-      <span class="eyebrow">What you get</span>
+      <span class="eyebrow">Benefits</span>
       <h2 class="sa-h2">Everything a product team needs, from day one.</h2>
       <p class="sa-lead">Not a list of names on an invoice — a working unit with its own rhythm, quality bar, and single point of contact.</p>
     </div>
     <div class="sa-grid-3 reveal">
       <div class="sa-oc">
         <div class="ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2.5"/><path d="M3.5 19a5.5 5.5 0 0111 0M13.5 19a4.5 4.5 0 017 0"/></svg></div>
-        <h3>Complete team, day one</h3>
+        <h3>Complete Team, Day One</h3>
         <p>Engineers, PM, and QA start together — no six-month ramp while roles fill one by one.</p>
       </div>
       <div class="sa-oc">
         <div class="ic"><svg viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01"/></svg></div>
-        <h3>Managed delivery</h3>
+        <h3>Managed Delivery</h3>
         <p>Your PM runs standups, sprints, and tracking. You review demos and set priorities — not tickets.</p>
       </div>
       <div class="sa-oc">
         <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
-        <h3>Quality built in</h3>
+        <h3>Quality Built In</h3>
         <p>Dedicated QA on the team from sprint one — testing isn't an afterthought or an extra invoice.</p>
       </div>
       <div class="sa-oc">
         <div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4V2m8 2V2"/></svg></div>
-        <h3>One predictable cost</h3>
+        <h3>One Predictable Cost</h3>
         <p>A single monthly figure covers the whole team — salaries, management, and replacements included.</p>
       </div>
       <div class="sa-oc">
         <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 12h16M4 12l4-4m-4 4l4 4m12-4l-4-4m4 4l-4 4"/></svg></div>
-        <h3>Shape-shifts with your roadmap</h3>
+        <h3>Shape-Shifts With Your Roadmap</h3>
         <p>Add a designer for the redesign, a DevOps engineer for launch — the team evolves as your product does.</p>
       </div>
       <div class="sa-oc">
         <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M2 12h20M12 3a15 15 0 010 18M12 3a15 15 0 000 18"/></svg></div>
-        <h3>Full transparency</h3>
+        <h3>Full Transparency</h3>
         <p>Your tools, your channels, weekly demos, and clear reporting — you always know where things stand.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ 4. HOW IT WORKS ============ -->
+<!-- ============ 4. WHY USE OUR TEAM ============ -->
+<section class="sa-section">
+  <div class="sa-wrap">
+    <div class="sa-head reveal">
+      <span class="eyebrow">Why Skiff</span>
+      <h2 class="sa-h2">Why use our dedicated development team?</h2>
+      <p class="sa-lead">Each team is composed around your roadmap, not pulled off a bench — a PM, 2–6 engineers matched to your stack, QA from sprint one, and design or DevOps added when the work calls for it.</p>
+    </div>
+    <div class="sa-quickcmp reveal">
+      <div class="sa-qc-row head">
+        <div class="sa-qc-cell">What you get with Skiff</div>
+        <div class="sa-qc-cell hi">Included</div>
+      </div>
+      <div class="sa-qc-row">
+        <div class="sa-qc-cell">You approve every member before they join</div>
+        <div class="sa-qc-cell hi-col"><span class="sa-qc-check yes"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span></div>
+      </div>
+      <div class="sa-qc-row">
+        <div class="sa-qc-cell">A PM included as your single point of contact</div>
+        <div class="sa-qc-cell hi-col"><span class="sa-qc-check yes"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span></div>
+      </div>
+      <div class="sa-qc-row">
+        <div class="sa-qc-cell">Zero hiring effort on your side</div>
+        <div class="sa-qc-cell hi-col"><span class="sa-qc-check yes"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span></div>
+      </div>
+      <div class="sa-qc-row">
+        <div class="sa-qc-cell">One fixed monthly cost, no surprise invoices</div>
+        <div class="sa-qc-cell hi-col"><span class="sa-qc-check yes"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span></div>
+      </div>
+      <div class="sa-qc-row">
+        <div class="sa-qc-cell">Rolling commitment after the initial term</div>
+        <div class="sa-qc-cell hi-col"><span class="sa-qc-check yes"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span></div>
+      </div>
+      <div class="sa-qc-row">
+        <div class="sa-qc-cell">Free replacement guarantee</div>
+        <div class="sa-qc-cell hi-col"><span class="sa-qc-check yes"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. PROCESS ============ -->
 <section class="sa-section" id="how">
   <div class="sa-wrap">
     <div class="sa-head reveal">
-      <span class="eyebrow">How it works</span>
+      <span class="eyebrow">Process</span>
       <h2 class="sa-h2">From roadmap to a sprinting team in weeks.</h2>
       <p class="sa-lead">A clear path from your first conversation to a team shipping on your product — and you approve every person on it.</p>
     </div>
@@ -908,134 +966,6 @@
     </div>
     <div class="sa-timeline-cta reveal">
       <a href="#contact" class="btn btn-ghost">Start With Your Roadmap <span class="arrow">→</span></a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 5. TEAM COMPOSITION ============ -->
-<section class="sa-section" style="background:var(--sa-bg-raise);border-block:1px solid var(--sa-line)">
-  <div class="sa-wrap">
-    <div class="sa-vet-grid">
-      <div class="sa-vet-copy reveal">
-        <span class="eyebrow">Your team</span>
-        <h2 class="sa-h2">One team, every role covered.</h2>
-        <p class="sa-lead">Each dedicated team is composed around your roadmap — not pulled from a bench. Every member works full-time on your product, follows your priorities, and answers to a single PM who answers to you. And you approve every person before they join.</p>
-        <div class="sa-vet-metrics">
-          <div class="sa-metric"><div class="num"><b>100</b>%</div><div class="lbl">Members you approve</div></div>
-          <div class="sa-metric"><div class="num"><b>0</b></div><div class="lbl">Hiring effort for you</div></div>
-        </div>
-      </div>
-      <div class="sa-funnel reveal" aria-hidden="true">
-        <div class="rung" style="width:100%"><span class="k">PM</span> Project manager — your single point of contact</div>
-        <div class="rung" style="width:90%"><span class="k">DEV</span> 2–6 engineers — matched to your stack</div>
-        <div class="rung" style="width:78%"><span class="k">QA</span> QA engineer — quality from sprint one</div>
-        <div class="rung" style="width:66%"><span class="k">UX</span> UI/UX designer — when the roadmap needs it</div>
-        <div class="rung" style="width:54%"><span class="k">OPS</span> DevOps — part-time or embedded</div>
-        <div class="rung" style="width:42%"><span class="k">★</span> Shaped around your roadmap</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 6. ROLES & EXPERTISE ============ -->
-<section class="sa-section" id="expertise">
-  <div class="sa-wrap">
-    <div class="sa-head reveal">
-      <span class="eyebrow">Expertise</span>
-      <h2 class="sa-h2">Specialists across the full stack.</h2>
-      <p class="sa-lead">Whatever shape your team takes, it draws from the same vetted talent pool — covering the roles and technologies modern products are actually built on.</p>
-    </div>
-    <div class="sa-roles reveal">
-      <div class="sa-role"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18"/></svg></div><h3>Frontend</h3><p>Web &amp; UI engineering</p></div>
-      <div class="sa-role"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></svg></div><h3>Backend</h3><p>APIs &amp; services</p></div>
-      <div class="sa-role"><div class="ic"><svg viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M11 18h2"/></svg></div><h3>Mobile</h3><p>iOS, Android &amp; cross-platform</p></div>
-      <div class="sa-role"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zM2 12h20M12 2c3 3 3 17 0 20M12 2c-3 3-3 17 0 20"/></svg></div><h3>DevOps / SRE</h3><p>Infrastructure &amp; reliability</p></div>
-      <div class="sa-role"><div class="ic"><svg viewBox="0 0 24 24"><path d="M9 11l3 3 8-8M20 12v6a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h9"/></svg></div><h3>QA / Automation</h3><p>Testing &amp; quality</p></div>
-      <div class="sa-role"><div class="ic"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></div><h3>Data / ML</h3><p>Pipelines &amp; models</p></div>
-      <div class="sa-role"><div class="ic"><svg viewBox="0 0 24 24"><path d="M18 10h1a3 3 0 010 6h-1M6 10H5a3 3 0 000 6h1M8 13h8"/><path d="M7 10a5 5 0 0110 0"/></svg></div><h3>Cloud</h3><p>AWS, GCP &amp; Azure</p></div>
-      <div class="sa-role"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Product &amp; Design</h3><p>PM, UX &amp; UI</p></div>
-    </div>
-    <div class="sa-chipwrap reveal">
-      <div class="cg">
-        <div class="cg-lbl">Languages &amp; frameworks</div>
-        <div class="sa-chips">
-          <span class="sa-tchip">TypeScript</span><span class="sa-tchip">React</span><span class="sa-tchip">Next.js</span><span class="sa-tchip">Node.js</span><span class="sa-tchip">Python</span><span class="sa-tchip">Go</span><span class="sa-tchip">Java</span><span class="sa-tchip">.NET</span><span class="sa-tchip">Rust</span><span class="sa-tchip">Swift</span><span class="sa-tchip">Kotlin</span><span class="sa-tchip">Vue</span>
-        </div>
-      </div>
-      <div class="cg">
-        <div class="cg-lbl">Infrastructure &amp; data</div>
-        <div class="sa-chips">
-          <span class="sa-tchip">AWS</span><span class="sa-tchip">Kubernetes</span><span class="sa-tchip">Docker</span><span class="sa-tchip">Terraform</span><span class="sa-tchip">PostgreSQL</span><span class="sa-tchip">GraphQL</span><span class="sa-tchip">Kafka</span><span class="sa-tchip">Snowflake</span><span class="sa-tchip">Redis</span><span class="sa-tchip">Elasticsearch</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 8. ENGAGEMENT MODELS ============ -->
-<section class="sa-section" id="models">
-  <div class="sa-wrap">
-    <div class="sa-head reveal">
-      <span class="eyebrow">Engagement</span>
-      <h2 class="sa-h2">Three ways to run a dedicated team.</h2>
-      <p class="sa-lead">Same fully managed model, sized and shaped to where your product is today.</p>
-    </div>
-    <div class="sa-models reveal">
-      <div class="sa-model">
-        <span class="badge" style="visibility:hidden">.</span>
-        <h3>Full product team</h3>
-        <p class="for">The team owns an entire product end-to-end — from backlog to production. Best when we're your engineering arm.</p>
-        <div class="meta">End-to-end · PM-led delivery</div>
-      </div>
-      <div class="sa-model hi">
-        <span class="badge">Most common</span>
-        <h3>Extension pod</h3>
-        <p class="for">A cross-functional squad working alongside your in-house team, owning its own workstream inside your roadmap.</p>
-        <div class="meta">Squad-sized · plugs into your org</div>
-      </div>
-      <div class="sa-model">
-        <span class="badge" style="visibility:hidden">.</span>
-        <h3>Build–operate–transfer</h3>
-        <p class="for">We assemble and run the team, then transition it into your organisation when you're ready to bring it in-house.</p>
-        <div class="meta">Managed now · yours later</div>
-      </div>
-    </div>
-    <div class="sa-riskband reveal">
-      <div class="sa-risk"><svg viewBox="0 0 24 24"><path d="M18 6L9 17l-5-5"/></svg> You approve every member</div>
-      <div class="sa-risk"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Rolling after initial term</div>
-      <div class="sa-risk"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 019-9 9 9 0 018 5M21 12a9 9 0 01-9 9 9 9 0 01-8-5"/><path d="M21 4v4h-4M3 20v-4h4"/></svg> Free replacement guarantee</div>
-    </div>
-    <div class="sa-models-cta reveal">
-      <a href="#contact" class="btn btn-primary">Talk to Us About Your Team <span class="arrow">→</span></a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 9. COMPARISON ============ -->
-<section class="sa-section" style="background:var(--sa-bg-raise);border-block:1px solid var(--sa-line)">
-  <div class="sa-wrap">
-    <div class="sa-head reveal">
-      <span class="eyebrow">Compare</span>
-      <h2 class="sa-h2">Dedicated team, augmentation, or in-house?</h2>
-      <p class="sa-lead">A quick way to see which model fits where you are today.</p>
-    </div>
-    <div class="sa-table-wrap reveal">
-      <table class="sa-table">
-        <thead>
-          <tr><th>Model</th><th class="col-hi">Dedicated team</th><th>Staff augmentation</th><th>In-house hiring</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Control</td><td class="col-hi">You steer, we run delivery</td><td>You direct day-to-day</td><td>You direct</td></tr>
-          <tr><td>Speed to start</td><td class="col-hi">1–2 weeks</td><td>~48 hours</td><td>2–4 months</td></tr>
-          <tr><td>Management overhead</td><td class="col-hi">Minimal — PM included</td><td>Low</td><td>High</td></tr>
-          <tr><td>Cost structure</td><td class="col-hi">One fixed monthly cost</td><td>Pay per capacity</td><td>Salaries + overheads</td></tr>
-          <tr><td>QA &amp; process</td><td class="col-hi">Built into the team</td><td>Yours</td><td>Yours to build</td></tr>
-          <tr><td>Best for</td><td class="col-hi">Owning a product or workstream</td><td>Filling gaps fast</td><td>Long-term core roles</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="sa-cmp-cta reveal">
-      <a href="skiff-staff-augmentation.html" class="sa-textlink">Just need individual engineers? See Staff Augmentation <span class="sa-ar">→</span></a>
     </div>
   </div>
 </section>
