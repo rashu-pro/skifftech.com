@@ -1,6 +1,7 @@
 <?php
 /**
- * The template for displaying all single posts
+ * The template for displaying all single posts — V6 dark design system
+ * (Skiff header + footer).
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
@@ -8,33 +9,29 @@
  */
 
 get_header();
-?>
 
-	<main id="primary" class="site-main">
+while ( have_posts() ) :
+	the_post();
+	?>
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+	<main id="pg-blog-article">
+	  <div class="ar-prog" id="arProg" aria-hidden="true"></div>
 
-			get_template_part( 'template-parts/content', get_post_type() );
+	  <?php get_template_part( 'template-parts/blog-article/header' ); ?>
+	  <?php get_template_part( 'template-parts/blog-article/lead-image' ); ?>
 
-			the_post_navigation(
-				array(
-					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'skifftech' ) . '</span> <span class="nav-title">%title</span>',
-					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'skifftech' ) . '</span> <span class="nav-title">%title</span>',
-				)
-			);
+	  <section class="ct-section" style="padding-top:0">
+	    <div class="ct-wrap">
+	      <article class="ar-prose reveal" id="arBody">
+	        <?php the_content(); ?>
+	      </article>
+	    </div>
+	  </section>
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+	  <?php get_template_part( 'template-parts/blog-article/prev-next' ); ?>
+	</main><!-- #pg-blog-article -->
 
-		endwhile; // End of the loop.
-		?>
+	<?php
+endwhile;
 
-	</main><!-- #main -->
-
-<?php
-//get_sidebar();
 get_footer();

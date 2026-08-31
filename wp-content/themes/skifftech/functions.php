@@ -334,6 +334,40 @@ function skifftech_scripts() {
 		);
 	}
 
+	// V6 blog page styles + scripts (only on that template)
+	if ( is_page_template( 'template-pages/blog.php' ) ) {
+		wp_enqueue_style(
+			'skifftech-blog',
+			$theme_uri . '/css/blog.css',
+			array( 'skifftech-header-skiff' ),
+			filemtime( $theme_dir . '/css/blog.css' )
+		);
+		wp_enqueue_script(
+			'skifftech-blog',
+			$theme_uri . '/js/blog.js',
+			array(),
+			filemtime( $theme_dir . '/js/blog.js' ),
+			true
+		);
+	}
+
+	// V6 blog article styles + scripts (only on single posts)
+	if ( is_singular( 'post' ) ) {
+		wp_enqueue_style(
+			'skifftech-blog-article',
+			$theme_uri . '/css/blog-article.css',
+			array( 'skifftech-header-skiff' ),
+			filemtime( $theme_dir . '/css/blog-article.css' )
+		);
+		wp_enqueue_script(
+			'skifftech-blog-article',
+			$theme_uri . '/js/blog-article.js',
+			array(),
+			filemtime( $theme_dir . '/js/blog-article.js' ),
+			true
+		);
+	}
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
