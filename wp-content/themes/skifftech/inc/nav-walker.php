@@ -25,7 +25,7 @@ class Skifftech_Mega_Menu_Walker extends Walker_Nav_Menu {
 		),
 		'Dedicated Development Team' => array(
 			'icon' => '<svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M2 20v-1.5A4.5 4.5 0 016.5 14h3A4.5 4.5 0 0114 18.5V20M15.5 14h1A4 4 0 0122 18v2"/></svg>',
-			'desc' => 'A full team — devs, PM, QA — we assemble and manage for you.',
+			'desc' => 'A full team devs, PM, QA - we assemble and manage for you.',
 		),
 	);
 
