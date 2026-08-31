@@ -1,0 +1,591 @@
+/* =====================================================
+   about-us.css — V6 About Us Page
+   Enqueued only on the About Us template.
+   Bootstrap conflict note:
+     .btn, .btn-primary and .badge exist in Bootstrap; all
+     rules here are scoped under #pg-about-us so they
+     override safely.
+   ===================================================== */
+
+/* ----- Base / shared (mirrors dedicated-team.css / staff-augmentation.css) ----- */
+#pg-about-us {
+  /* page-local design tokens (.sa-* namespace) */
+  --sa-bg: var(--night);
+  --sa-card: var(--night-2);
+  --sa-line: var(--line-d);
+  --sa-gold: var(--gold);
+  --sa-gold-2: var(--gold-bright);
+  --sa-gold-dim: rgba(236, 187, 55, 0.12);
+  --sa-gold-line: rgba(236, 187, 55, 0.38);
+  --sa-ink: var(--tl);
+  --sa-muted: var(--tl-mut);
+  --sa-dim: #7a7466;
+  --sa-r: var(--r);
+  --sa-mono: "JetBrains Mono", ui-monospace, monospace;
+  --sa-display: "Bricolage Grotesque", system-ui, sans-serif;
+
+  /* One flat background for the whole page — no per-section banding. */
+  background: var(--night);
+  color: var(--tl);
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+#pg-about-us h1,
+#pg-about-us h2,
+#pg-about-us h3,
+#pg-about-us h4 {
+  font-family: "Bricolage Grotesque", "Inter", sans-serif;
+  line-height: 1.06;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+#pg-about-us p {
+  margin: 0;
+}
+
+#pg-about-us a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#pg-about-us .gold-txt {
+  background: linear-gradient(100deg, var(--gold), var(--ember));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+#pg-about-us .eyebrow {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+#pg-about-us .eyebrow::before {
+  content: "";
+  width: 26px;
+  height: 1px;
+  background: var(--gold);
+  display: inline-block;
+}
+
+#pg-about-us .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 14px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition:
+    transform 0.25s var(--ease),
+    background 0.25s,
+    box-shadow 0.25s,
+    border-color 0.25s;
+  font-family: "Inter", sans-serif;
+  text-decoration: none;
+  line-height: 1;
+}
+
+#pg-about-us .btn-primary {
+  background: var(--gold);
+  color: #1a1408;
+  box-shadow: 0 10px 30px -12px rgba(236, 187, 55, 0.7);
+}
+
+#pg-about-us .btn-primary:hover {
+  transform: translateY(-2px);
+  background: var(--gold-bright);
+  box-shadow: 0 16px 38px -12px rgba(236, 187, 55, 0.85);
+  color: #1a1408;
+}
+
+#pg-about-us .btn-ghost {
+  background: transparent;
+  color: var(--tl);
+  border-color: var(--line-d);
+}
+
+#pg-about-us .btn-ghost:hover {
+  border-color: var(--gold);
+  color: var(--gold-bright);
+  transform: translateY(-2px);
+}
+
+#pg-about-us .arrow {
+  font-size: 13px;
+  transition: transform 0.25s var(--ease);
+}
+
+#pg-about-us .btn:hover .arrow {
+  transform: translateX(3px);
+}
+
+#pg-about-us .reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 0.7s var(--ease),
+    transform 0.7s var(--ease);
+}
+
+#pg-about-us .reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+/* =====================================================
+   Layout primitives
+   ===================================================== */
+
+#pg-about-us .sa-wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding-inline: clamp(20px, 5vw, 40px);
+}
+
+#pg-about-us .sa-section {
+  padding-block: clamp(68px, 9vw, 116px);
+  position: relative;
+}
+
+#pg-about-us .sa-h2 {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+}
+
+#pg-about-us .sa-lead {
+  color: var(--sa-muted);
+  font-size: clamp(16px, 1.6vw, 19px);
+  max-width: 62ch;
+  line-height: 1.65;
+}
+
+#pg-about-us .sa-head {
+  max-width: 740px;
+  margin-bottom: clamp(36px, 5vw, 56px);
+}
+
+#pg-about-us .sa-head .eyebrow {
+  margin-bottom: 20px;
+}
+
+#pg-about-us .sa-head h2 {
+  margin-bottom: 16px;
+}
+
+/* ----- breadcrumb ----- */
+#pg-about-us .sa-crumb {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--sa-mono);
+  font-size: 12px;
+  color: var(--sa-muted);
+  margin-bottom: 26px;
+  flex-wrap: wrap;
+}
+
+#pg-about-us .sa-crumb a {
+  color: var(--sa-muted);
+  transition: 0.2s;
+}
+
+#pg-about-us .sa-crumb a:hover {
+  color: var(--sa-gold-2);
+}
+
+#pg-about-us .sa-crumb .sep {
+  opacity: 0.5;
+}
+
+#pg-about-us .sa-crumb .cur {
+  color: var(--sa-gold);
+}
+
+/* =====================================================
+   1. Hero + stats strip
+   ===================================================== */
+
+#pg-about-us .sa-hero {
+  padding-top: 150px;
+  padding-bottom: 0;
+}
+
+#pg-about-us .sa-hero h1 {
+  font-size: clamp(38px, 5.8vw, 66px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  margin-bottom: 22px;
+  max-width: 840px;
+}
+
+/* ----- proof / stats strip ----- */
+#pg-about-us .sa-proof {
+  margin-top: clamp(48px, 6vw, 72px);
+  border-top: 1px solid var(--sa-line);
+  border-bottom: 1px solid var(--sa-line);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+#pg-about-us .sa-proof .sa-metric {
+  padding: 28px 26px;
+  border-right: 1px solid var(--sa-line);
+}
+
+#pg-about-us .sa-proof .sa-metric:last-child {
+  border-right: 0;
+}
+
+#pg-about-us .sa-metric .num {
+  font-family: var(--sa-display);
+  font-size: clamp(26px, 3vw, 36px);
+  font-weight: 700;
+  color: var(--sa-ink);
+  letter-spacing: -0.02em;
+}
+
+#pg-about-us .sa-metric .num b {
+  color: var(--sa-gold-2);
+  font-weight: 700;
+}
+
+#pg-about-us .sa-metric .lbl {
+  font-family: var(--sa-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sa-dim);
+  margin-top: 8px;
+}
+
+/* =====================================================
+   2. Founder's letter
+   ===================================================== */
+
+#pg-about-us .sa-letter {
+  display: grid;
+  grid-template-columns: minmax(240px, 320px) 1fr;
+  background: var(--sa-card);
+  border: 1px solid var(--sa-gold-line);
+  border-radius: calc(var(--sa-r) + 6px);
+  overflow: hidden;
+}
+
+#pg-about-us .sa-letter .ph {
+  position: relative;
+  min-height: 380px;
+}
+
+#pg-about-us .sa-letter .ph img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+#pg-about-us .sa-letter .ph::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 55%, rgba(16, 15, 13, 0.6));
+}
+
+#pg-about-us .sa-letter .bd {
+  padding: clamp(30px, 4.5vw, 56px);
+}
+
+#pg-about-us .sa-letter .salut {
+  font-family: var(--sa-mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sa-gold);
+  margin-bottom: 22px;
+}
+
+#pg-about-us .sa-letter p {
+  color: var(--sa-muted);
+  font-size: 16px;
+  line-height: 1.78;
+  margin-bottom: 18px;
+}
+
+#pg-about-us .sa-letter p b {
+  color: var(--sa-ink);
+}
+
+#pg-about-us .sa-letter .pull {
+  border-left: 2px solid var(--sa-gold);
+  padding-left: 18px;
+  font-family: var(--sa-display);
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--sa-ink);
+  line-height: 1.5;
+  margin: 24px 0;
+}
+
+#pg-about-us .sa-sign {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--sa-line);
+}
+
+#pg-about-us .sa-sign .nm {
+  font-family: var(--sa-display);
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--sa-gold-2);
+}
+
+#pg-about-us .sa-sign .rl {
+  font-family: var(--sa-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sa-dim);
+  margin-top: 6px;
+}
+
+/* =====================================================
+   3. How we work (manifesto rows)
+   ===================================================== */
+
+#pg-about-us .sa-manif {
+  border-top: 1px solid var(--sa-line);
+}
+
+#pg-about-us .sa-row {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 26px;
+  align-items: baseline;
+  padding: 30px 0;
+  border-bottom: 1px solid var(--sa-line);
+  transition: 0.25s;
+}
+
+#pg-about-us .sa-row:hover h3 {
+  color: var(--sa-gold-2);
+}
+
+#pg-about-us .sa-row .n {
+  font-family: var(--sa-mono);
+  font-size: 13px;
+  color: var(--sa-gold);
+  letter-spacing: 0.08em;
+}
+
+#pg-about-us .sa-row h3 {
+  font-size: clamp(19px, 2.4vw, 26px);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  transition: 0.25s;
+  margin-bottom: 6px;
+}
+
+#pg-about-us .sa-row p {
+  color: var(--sa-muted);
+  font-size: 14.5px;
+  line-height: 1.6;
+  max-width: 64ch;
+}
+
+/* =====================================================
+   4. Team teaser
+   ===================================================== */
+
+#pg-about-us .sa-team {
+  background: var(--sa-card);
+  border: 1px solid var(--sa-line);
+  border-radius: calc(var(--sa-r) + 4px);
+  padding: clamp(30px, 4.5vw, 52px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+#pg-about-us .sa-team .avs {
+  display: flex;
+}
+
+#pg-about-us .sa-team .avs img {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  border: 2px solid var(--sa-card);
+  margin-left: -14px;
+  background: var(--night-3);
+}
+
+#pg-about-us .sa-team .avs img:first-child {
+  margin-left: 0;
+}
+
+#pg-about-us .sa-team .avs .plus {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  margin-left: -14px;
+  background: var(--sa-gold-dim);
+  border: 2px solid var(--sa-card);
+  display: grid;
+  place-items: center;
+  font-family: var(--sa-mono);
+  font-size: 12px;
+  color: var(--sa-gold-2);
+}
+
+#pg-about-us .sa-team h3 {
+  font-size: clamp(20px, 2.4vw, 26px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+#pg-about-us .sa-team p {
+  color: var(--sa-muted);
+  font-size: 14.5px;
+  max-width: 52ch;
+}
+
+#pg-about-us .sa-team .txtc {
+  flex: 1;
+  min-width: 260px;
+}
+
+/* =====================================================
+   5. Final CTA
+   ===================================================== */
+
+#pg-about-us .sa-final {
+  position: relative;
+  overflow: hidden;
+}
+
+#pg-about-us .sa-final-inner {
+  background: linear-gradient(135deg, #1b1813, var(--night-3));
+  border: 1px solid var(--sa-gold-line);
+  border-radius: 22px;
+  padding: clamp(48px, 7vw, 84px);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+#pg-about-us .sa-final h2 {
+  font-size: clamp(30px, 4.4vw, 50px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 18px;
+}
+
+#pg-about-us .sa-final .sa-lead {
+  margin: 0 auto 34px;
+}
+
+#pg-about-us .sa-final-cta {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+}
+
+#pg-about-us .sa-final .glow {
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--sa-gold-dim), transparent 65%);
+  top: -40%;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+/* =====================================================
+   Responsive
+   ===================================================== */
+
+@media (max-width: 960px) {
+  #pg-about-us .sa-letter {
+    grid-template-columns: 1fr;
+  }
+
+  #pg-about-us .sa-letter .ph {
+    min-height: 320px;
+  }
+}
+
+@media (max-width: 720px) {
+  #pg-about-us .sa-proof {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #pg-about-us .sa-proof .sa-metric:nth-child(2) {
+    border-right: 0;
+  }
+
+  #pg-about-us .sa-proof .sa-metric:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--sa-line);
+  }
+
+  #pg-about-us .sa-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 24px 0;
+  }
+
+  #pg-about-us .sa-hero {
+    padding-top: 130px;
+  }
+
+  #pg-about-us .sa-team {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #pg-about-us .sa-final-cta .btn {
+    flex: 1;
+    justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #pg-about-us .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
