@@ -93,7 +93,7 @@
   font-weight: 600;
   font-size: 15px;
   padding: 14px 24px;
-  border-radius: 999px;
+  border-radius: 8px;
   cursor: pointer;
   border: 1px solid transparent;
   transition:
@@ -376,8 +376,7 @@
 #pg-staff-augmentation .sa-pos-card.hi {
   border-color: var(--sa-gold-line);
   background:
-    linear-gradient(180deg, var(--sa-gold-dim), transparent 60%),
-    var(--sa-card);
+    linear-gradient(180deg, var(--sa-gold-dim), transparent 60%), var(--sa-card);
 }
 
 #pg-staff-augmentation .sa-pos-card .tag {
