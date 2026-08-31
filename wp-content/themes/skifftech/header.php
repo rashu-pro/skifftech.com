@@ -46,6 +46,7 @@ $tpl = get_template_directory_uri();
         'menu_id'        => 'primary-menu',
         'menu_class'     => 'navlinks',
         'container'      => false,
+        'walker'         => new Skifftech_Mega_Menu_Walker(),
     ) ); ?>
 
     <div class="nav-cta">

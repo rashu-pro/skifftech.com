@@ -479,11 +479,6 @@
   border-bottom: 1px solid rgb(255 255 255 / 2%);
 }
 
-/* Hide nested submenus — parents show a chevron indicator instead */
-#mnav .mnav-list .sub-menu {
-  display: none;
-}
-
 #mnav .mnav-list a {
   display: flex;
   align-items: center;
@@ -502,7 +497,7 @@
   color: var(--gold-bright);
 }
 
-/* Chevron on menu items that have a submenu */
+/* Chevron on menu items that have a submenu — always shown open */
 #mnav .mnav-list .menu-item-has-children > a::after {
   content: "";
   flex: none;
@@ -512,6 +507,45 @@
   border-bottom: 2px solid currentColor;
   transform: translateY(-2px) rotate(45deg);
   opacity: 0.55;
+}
+
+/* Submenu (e.g. Services) — always expanded, styled as an indented sub-list */
+#mnav .mnav-list .sub-menu {
+  list-style: none;
+  margin: 0;
+  padding: 4px 0 14px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+#mnav .mnav-list .sub-menu li {
+  width: 100%;
+  border-bottom: 0;
+}
+
+#mnav .mnav-list .sub-menu a {
+  position: relative;
+  padding: 12px 28px 12px 46px;
+  font-size: 15.5px;
+  font-weight: 400;
+  color: var(--tl-mut);
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+#mnav .mnav-list .sub-menu a::before {
+  content: "";
+  position: absolute;
+  left: 28px;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--gold);
+  opacity: 0.75;
+  transform: translateY(-50%);
+}
+
+#mnav .mnav-list .sub-menu a:hover {
+  color: var(--gold-bright);
 }
 
 /* CTA pinned to the bottom, full width */
