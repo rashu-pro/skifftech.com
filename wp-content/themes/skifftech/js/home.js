@@ -162,4 +162,57 @@
   buildTrack(trk1, row1);
   buildTrack(trk2, row2);
 
+  /* ----------------------------------------------------------
+     Client logo marquee — repeat the real logo set until the
+     track is at least twice the viewport width, then duplicate
+     that whole result once more so the CSS translateX(-50%)
+     loop has two identical, seamless halves.
+  ---------------------------------------------------------- */
+  var clientTrack = document.getElementById('clientTrack');
+  if (clientTrack) {
+    var baseLogos = Array.prototype.slice.call(clientTrack.children);
+    var images = clientTrack.querySelectorAll('img');
+    var pending = images.length;
+
+    function buildClientMarquee() {
+      if (!baseLogos.length) return;
+
+      var minWidth = window.innerWidth * 2;
+      var guard = 0; // safety cap in case logos can't be measured
+
+      while (clientTrack.scrollWidth < minWidth && guard < 50) {
+        baseLogos.forEach(function (node) {
+          clientTrack.appendChild(node.cloneNode(true));
+        });
+        guard++;
+      }
+
+      // duplicate the whole (now wide-enough) set once more for the
+      // seamless translateX(-50%) loop.
+      Array.prototype.slice.call(clientTrack.children).forEach(function (node) {
+        clientTrack.appendChild(node.cloneNode(true));
+      });
+    }
+
+    function onLogoLoaded() {
+      pending--;
+      if (pending <= 0) {
+        buildClientMarquee();
+      }
+    }
+
+    if (!pending) {
+      buildClientMarquee();
+    } else {
+      images.forEach(function (img) {
+        if (img.complete) {
+          onLogoLoaded();
+        } else {
+          img.addEventListener('load', onLogoLoaded);
+          img.addEventListener('error', onLogoLoaded);
+        }
+      });
+    }
+  }
+
 })();
