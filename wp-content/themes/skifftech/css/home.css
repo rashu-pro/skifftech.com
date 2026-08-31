@@ -598,14 +598,17 @@
   opacity: 0.6;
 }
 #pg-home .client-logo img {
-  border-radius: 4px;
-  max-height: 90px;
-  opacity: 0.8;
+  height: 56px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.65;
+  transition: opacity 0.25s ease;
 }
 
 #pg-home .client-logo:hover,
-#pg-home .client-logo img:hover {
+#pg-home .client-logo:hover img {
   color: var(--tl);
+  opacity: 1;
 }
 
 /* =====================================================
