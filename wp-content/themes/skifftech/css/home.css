@@ -545,7 +545,7 @@
 
 #pg-home .marquee-track {
   display: flex;
-  gap: 14px;
+  gap: 40px;
   width: max-content;
   /* Intro slides the strip in from the right edge, then the seamless
      loop takes over at translateX(0) with no jump. */
@@ -599,12 +599,31 @@
 }
 #pg-home .client-logo img {
   border-radius: 4px;
-  max-height: 90px;
+  max-height: 40px;
   opacity: 0.8;
 }
 
 #pg-home .client-logo:hover,
 #pg-home .client-logo img:hover {
+  color: var(--tl);
+}
+
+/* Icon-only marks (no readable wordmark baked into the image) carry
+   the org name as text so the brand stays identifiable at this size. */
+#pg-home .client-logo.has-label img {
+  max-height: 40px;
+}
+
+#pg-home .client-logo .client-name {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  /* color: var(--tl-mut); */
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+
+#pg-home .client-logo:hover .client-name {
   color: var(--tl);
 }
 
