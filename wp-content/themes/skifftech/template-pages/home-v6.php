@@ -13,7 +13,9 @@ get_header();
 
 <main id="pg-home">
   <?php get_template_part( 'template-parts/home/hero' ); ?>
-  <?php get_template_part( 'template-parts/home/clients' ); ?>
+  <?php 
+    // get_template_part( 'template-parts/home/clients' ); 
+  ?>
   <?php
    //get_template_part( 'template-parts/home/reviews' );
     ?>
