@@ -78,14 +78,6 @@
   margin-bottom: 18px;
 }
 
-#pg-dedicated-team .eyebrow::before {
-  content: "";
-  width: 26px;
-  height: 1px;
-  background: var(--gold);
-  display: inline-block;
-}
-
 #pg-dedicated-team .btn {
   display: inline-flex;
   align-items: center;

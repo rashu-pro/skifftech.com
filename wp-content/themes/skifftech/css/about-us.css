@@ -76,14 +76,6 @@
   margin-bottom: 18px;
 }
 
-#pg-about-us .eyebrow::before {
-  content: "";
-  width: 26px;
-  height: 1px;
-  background: var(--gold);
-  display: inline-block;
-}
-
 #pg-about-us .btn {
   display: inline-flex;
   align-items: center;

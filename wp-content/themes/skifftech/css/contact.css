@@ -54,14 +54,6 @@
   margin-bottom: 18px;
 }
 
-#pg-contact .eyebrow::before {
-  content: "";
-  width: 26px;
-  height: 1px;
-  background: var(--gold);
-  display: inline-block;
-}
-
 #pg-contact .btn {
   display: inline-flex;
   align-items: center;

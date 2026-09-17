@@ -84,14 +84,6 @@
   margin-bottom: 18px;
 }
 
-#pg-home .eyebrow::before {
-  content: "";
-  width: 26px;
-  height: 1px;
-  background: var(--gold);
-  display: inline-block;
-}
-
 /* Buttons (override Bootstrap within #pg-home) */
 #pg-home .btn {
   display: inline-flex;
@@ -472,9 +464,6 @@
 
 #pg-home .on-light .eyebrow {
   color: var(--gold-deep);
-}
-#pg-home .on-light .eyebrow::before {
-  background: var(--gold-deep);
 }
 
 #pg-home .sec-head {
