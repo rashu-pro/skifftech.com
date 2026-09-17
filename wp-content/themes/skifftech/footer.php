@@ -6,6 +6,8 @@
  *
  * @package skifftech
  */
+
+$tpl = get_template_directory_uri();
 ?>
 
 <footer id="ftr">
@@ -15,7 +17,7 @@
 
       <div class="foot-brand">
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-          <img src="https://skifftech.com/wp-content/uploads/2022/05/skiff-logo-new-version-white.png"
+          <img src="<?php echo esc_url( $tpl ); ?>/images/skiff-logo-new-version-white.png"
                alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
         </a>
         <p>Your end-to-end product engineering partner &mdash; software that scales with your business.</p>
@@ -23,10 +25,9 @@
 
       <div class="foot-col">
         <h5>Services</h5>
-        <a href="<?php echo esc_url( home_url( '/services/' ) ); ?>">Custom Software</a>
-        <a href="<?php echo esc_url( home_url( '/services/' ) ); ?>">Consultency</a>
-        <a href="<?php echo esc_url( home_url( '/services/' ) ); ?>">Data Analysis</a>
-        <!-- <a href="<?php echo esc_url( home_url( '/products/' ) ); ?>">Digital Marketing</a> -->
+        <a href="<?php echo esc_url( home_url( '/staff-augmentation/' ) ); ?>">Staff Augmentation</a>
+        <a href="<?php echo esc_url( home_url( '/end-to-end-product-build-2/' ) ); ?>">End-to-End Product Build</a>
+        <a href="<?php echo esc_url( home_url( '/dedicated-development-team/' ) ); ?>">Dedicated Development Team </a>
       </div>
 
       <div class="foot-col">

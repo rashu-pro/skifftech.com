@@ -36,7 +36,7 @@ $tpl = get_template_directory_uri();
   <div class="hdr-row">
 
     <a href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
-      <img src="https://skifftech.com/wp-content/uploads/2022/05/skiff-logo-new-version-white.png"
+      <img src="<?php echo esc_url( $tpl ); ?>/images/skiff-logo-new-version-white.png"
            alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>"
            class="brand-logo">
     </a>
